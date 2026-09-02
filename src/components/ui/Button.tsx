@@ -6,7 +6,7 @@ type Variant = 'primary' | 'accent' | 'outline' | 'ghost' | 'onDark';
 type Size = 'sm' | 'md' | 'lg';
 
 const base =
-'inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-smooth disabled:opacity-60 disabled:pointer-events-none min-h-[44px] text-center';
+'inline-flex items-center justify-center gap-2 font-display font-semibold rounded-md tracking-[0.1em] transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-smooth disabled:opacity-60 disabled:pointer-events-none min-h-[44px] text-center';
 
 const variants: Record<Variant, string> = {
   primary: 'bg-navy text-white hover:bg-navy-700 shadow-sm active:translate-y-[1px]',

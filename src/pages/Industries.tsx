@@ -11,7 +11,7 @@ import { fadeUp, staggerParent, viewportOnce } from '../utils/motion';
 export function Industries() {
   usePageMeta(
     'VOTIX Systems | Industries We Serve',
-    'Agitation and mixing solutions for dairy, food and beverage, pharmaceutical, chemical, cosmetics, biotech and biogas processes.'
+    'Agitation and mixing solutions for dairy, food and beverage, pharmaceutical, chemical, cosmetics and biotech processes.'
   );
 
   return (

@@ -68,7 +68,7 @@ export function WhyVotix() {
           
           {reasons.map(({ icon: Icon, title, text }) =>
           <motion.li key={title} variants={fadeUp} className="flex gap-4 border-l-2 border-steel-100 pl-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-brand-600">
+              <span className="feature-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-100 bg-white text-brand">
                 <Icon className="h-5 w-5" aria-hidden />
               </span>
               <span>

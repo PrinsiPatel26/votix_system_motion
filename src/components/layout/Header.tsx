@@ -1,32 +1,26 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ChevronDownIcon, MenuIcon, SearchIcon } from 'lucide-react';
+import { ChevronDownIcon, MenuIcon, XIcon } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Logo } from '../ui/Logo';
 import { Button } from '../ui/Button';
 import { MobileMenu } from './MobileMenu';
-import { SearchOverlay } from '../search/SearchOverlay';
 import { navigation } from '../../data/navigation';
 import { EASE_SMOOTH } from '../../utils/motion';
 import { cn } from '../../utils/cn';
 
 export function Header() {
   const headerRef = useRef<HTMLElement>(null);
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [productsMenuStyle, setProductsMenuStyle] = useState<CSSProperties>({});
   const closeTimer = useRef<number>();
+  const productsMenuRef = useRef<HTMLDivElement | null>(null);
+  const productsItemRef = useRef<HTMLLIElement | null>(null);
   const { pathname } = useLocation();
   const reduce = useReducedMotion();
-
-  useLayoutEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const header = headerRef.current;
@@ -48,12 +42,52 @@ export function Header() {
   }, [pathname]);
 
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setActiveMenu(null);
+      if (e.key === 'Escape') {
+        setActiveMenu(null);
+        setMenuOpen(false);
+      }
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
+
+  useEffect(() => {
+    const updateProductsMenuPosition = () => {
+      if (!productsItemRef.current || !productsMenuRef.current) return;
+
+      const itemRect = productsItemRef.current.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      const padding = 16;
+      const baseWidth = 760;
+      const width = Math.min(baseWidth, Math.max(280, viewportWidth - padding * 2));
+      const minLeft = padding;
+      const maxLeft = viewportWidth - padding - width;
+      const desiredLeft = itemRect.left + itemRect.width / 2 - width / 2;
+      const left = Math.min(Math.max(desiredLeft, minLeft), maxLeft) - itemRect.left;
+
+      setProductsMenuStyle({
+        width: `${width}px`,
+        left: `${left}px`,
+        maxWidth: `${viewportWidth - padding * 2}px`,
+      });
+    };
+
+    if (activeMenu === 'Products') {
+      updateProductsMenuPosition();
+      window.addEventListener('resize', updateProductsMenuPosition);
+      return () => window.removeEventListener('resize', updateProductsMenuPosition);
+    }
+
+    return undefined;
+  }, [activeMenu]);
 
   const openMenu = (label: string) => {
     window.clearTimeout(closeTimer.current);
@@ -78,17 +112,17 @@ export function Header() {
       <header
         ref={headerRef}
         className={cn(
-          'sticky top-0 z-[90] w-full border-b border-white/15 bg-navy-950/95 text-white backdrop-blur transition-[box-shadow,border-color] duration-200 ease-smooth',
-          scrolled ? 'shadow-header' : ''
+          'fixed left-0 top-0 z-[90] w-full border-b border-white/10 bg-[#00193C] text-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-[background-color,backdrop-filter] duration-300',
+          scrolled && 'bg-[#00142F]/95 backdrop-blur-md'
         )}>
         
-          <Container className="flex h-[68px] items-center justify-between gap-4 lg:h-[76px]">
-          <Link to="/" aria-label="VOTIX Systems — home" className="shrink-0">
-            <Logo />
+          <Container className="header-container mx-0 flex h-[100px] w-full max-w-[1800px] items-center justify-between gap-0 !px-0 pl-0 sm:pl-0 lg:h-[100px] lg:pl-0">
+          <Link to="/" aria-label="VOTIX Systems — home" className="ml-0 mr-auto shrink-0 !pl-0">
+            <Logo className="!ml-0 !h-[160px] !w-[380px] sm:!h-[170px] sm:!w-[410px] lg:!h-[185px] lg:!w-[440px] 2xl:!h-[200px] 2xl:!w-[470px]" />
           </Link>
 
-          <nav className="hidden xl:block" aria-label="Main">
-            <ul className="flex items-center">
+          <nav className="hidden min-w-0 lg:flex lg:flex-1 lg:justify-end lg:pr-2" aria-label="Main">
+            <ul className="flex items-center justify-end gap-2 2xl:gap-4 lg:-translate-x-2">
               {navigation.map((item) => {
                 const active = isActive(item.href);
                 const hasMenu = !!item.groups;
@@ -98,6 +132,7 @@ export function Header() {
                 return (
                   <li
                     key={item.label}
+                    ref={item.label === 'Products' ? productsItemRef : undefined}
                     className="relative"
                     onMouseEnter={() => hasMenu && openMenu(item.label)}
                     onMouseLeave={() => hasMenu && scheduleClose()}>
@@ -106,8 +141,8 @@ export function Header() {
                       <Link
                         to={item.href}
                         className={cn(
-                          'relative flex h-[68px] items-center whitespace-nowrap px-3 text-[14px] font-semibold transition-colors duration-150 ease-smooth lg:h-[76px] xl:px-3.5 xl:text-[15px]',
-                          active ? 'text-white' : 'text-steel-200 hover:text-white'
+                          'relative flex h-[100px] items-center whitespace-nowrap px-2 text-[13px] font-semibold tracking-[0.1em] transition-colors duration-150 ease-smooth 2xl:h-[100px] 2xl:px-2.5 2xl:text-[14px]',
+                          active ? 'text-accent' : 'text-white/90 hover:text-accent'
                         )}
                         aria-current={active ? 'page' : undefined}>
                         
@@ -126,7 +161,7 @@ export function Header() {
                         aria-expanded={isOpen}
                         aria-label={`${isOpen ? 'Hide' : 'Show'} ${item.label} menu`}
                         onClick={() => isOpen ? setActiveMenu(null) : openMenu(item.label)}
-                        className="-ml-2.5 flex h-[68px] w-6 items-center justify-center text-steel-300 transition-colors duration-150 ease-smooth hover:text-white lg:h-[76px]">
+                          className="-ml-2.5 flex h-[100px] w-6 items-center justify-center text-white/75 transition-colors duration-150 ease-smooth hover:text-accent 2xl:h-[100px]">
                         
                           <ChevronDownIcon
                           className={cn(
@@ -142,14 +177,16 @@ export function Header() {
                     <AnimatePresence>
                       {hasMenu && isOpen &&
                       <motion.div
+                        ref={wide ? productsMenuRef : undefined}
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 6 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={reduce ? { opacity: 0 } : { opacity: 0, y: 4 }}
                         transition={{ duration: 0.18, ease: EASE_SMOOTH }}
+                        style={wide ? productsMenuStyle : undefined}
                         className={cn(
                           'absolute top-full z-50 rounded-b-lg border border-t-0 border-steel-100 bg-white p-5 shadow-lift',
                           wide ?
-                          'left-0 w-[760px] -translate-x-24' :
+                          'left-0 w-[760px] max-w-[calc(100vw-32px)]' :
                           item.label === 'Resources' ?
                           'right-0 w-[280px]' :
                           'left-0 w-[280px]'
@@ -177,7 +214,7 @@ export function Header() {
                                           {child.label}
                                         </span>
                                         {child.description &&
-                                  <span className="mt-0.5 block text-xs text-steel-500">
+                                  <span className="nav-description mt-0.5 block text-xs text-steel-500">
                                             {child.description}
                                           </span>
                                   }
@@ -197,34 +234,25 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              aria-label="Search the site"
-              className="flex h-11 w-11 items-center justify-center rounded-md text-steel-200 transition-colors duration-150 ease-smooth hover:bg-white/10 hover:text-white">
-              
-              <SearchIcon className="h-5 w-5" aria-hidden />
-            </button>
-            <Button to="/contact" variant="accent" size="sm" className="hidden sm:inline-flex">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2 lg:gap-3 pr-2 sm:pr-3 lg:pr-0">
+            <Button to="/contact" variant="accent" size="sm" className="hidden px-5 py-3 text-sm sm:inline-flex">
               Contact Us
             </Button>
             <button
               type="button"
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              className="flex h-11 w-11 items-center justify-center rounded-md text-white transition-colors duration-150 ease-smooth hover:bg-white/10 xl:hidden">
+              className="flex h-11 w-11 items-center justify-center rounded-md text-white transition-[color,transform] duration-200 ease-smooth hover:scale-105 hover:text-accent xl:hidden">
               
-              <MenuIcon className="h-6 w-6" aria-hidden />
+              {menuOpen ? <XIcon className="h-7 w-7" aria-hidden /> : <MenuIcon className="h-7 w-7" aria-hidden />}
             </button>
           </div>
         </Container>
       </header>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>);
 
 }

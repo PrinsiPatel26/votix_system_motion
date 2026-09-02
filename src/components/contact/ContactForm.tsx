@@ -53,7 +53,7 @@ export function ContactForm() {
 
     setStatus('submitting');
     try {
-      const res = await submitForm('Contact enquiry', values);
+      const res = await submitForm('Contact enquiry', values as unknown as Record<string, unknown>);
       setReference(res.reference);
       setStatus('success');
     } catch {

@@ -15,7 +15,7 @@ export function NotFound() {
         <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
           Error 404
         </p>
-        <h1 className="mt-4 font-display text-4xl font-black leading-tight text-navy sm:text-6xl">
+        <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight text-navy sm:text-6xl">
           This page is <span className="text-accent">off-spec</span>
         </h1>
         <p className="mx-auto mt-4 max-w-lg text-[17px] leading-relaxed text-steel-600">

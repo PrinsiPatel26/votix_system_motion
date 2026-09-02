@@ -36,7 +36,7 @@ export function PageHero({
       <div className="absolute inset-0" aria-hidden>
           <SmartImage
           src={image}
-          alt=""
+          alt={imageAlt ?? ''}
           ratio="h-full"
           className="h-full w-full bg-transparent opacity-25"
           imgClassName="h-full w-full"

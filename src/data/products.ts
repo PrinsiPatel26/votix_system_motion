@@ -74,7 +74,7 @@ export const products: Product[] = [
   'Side entry agitators mount horizontally on the tank shell, driving a propeller that generates a broad rotational flow across the tank. They are the economical solution where a top-mounted shaft would be impractically long.',
   'Units can be supplied with an angled mounting to fine-tune the flow pattern, and with a shut-off arrangement allowing seal service without emptying the tank.'],
 
-  industries: ['chemical', 'biogas', 'food-beverage', 'dairy'],
+  industries: ['chemical', 'food-beverage', 'dairy'],
   applications: ['blending', 'suspension', 'solid-liquid-mixing', 'heat-transfer'],
   features: [
   'Horizontal wall-mounted drive with compact footprint',
@@ -95,7 +95,7 @@ export const products: Product[] = [
   'Corrosion-resistant material options for aggressive media'],
 
   image: images.products.sideEntry,
-  gallery: [images.products.sideEntry, images.impellers.propeller, images.industries.biogas],
+  gallery: [images.products.sideEntry, images.impellers.propeller],
   specifications: [
   { label: 'Mounting', value: 'Horizontal, flanged to tank shell' },
   { label: 'Wetted materials', value: 'SS 304 / SS 316 / duplex on request' },
@@ -261,7 +261,7 @@ export const products: Product[] = [
   'Where a standard configuration does not fit — unusual vessel geometry, extreme viscosity, restricted headroom or a retrofit into existing infrastructure — VOTIX engineers a bespoke solution around the actual constraints.',
   'The process starts with your product data and vessel drawings, moves through impeller selection and mechanical design, and ends with manufacturing, testing and commissioning support.'],
 
-  industries: ['chemical', 'biogas', 'food-beverage', 'pharmaceutical', 'cosmetics', 'biotech', 'dairy'],
+  industries: ['chemical', 'food-beverage', 'pharmaceutical', 'cosmetics', 'biotech', 'dairy'],
   applications: ['viscous-mixing', 'solid-liquid-mixing', 'gas-dispersion', 'blending'],
   features: [
   'Design from your process and vessel data',

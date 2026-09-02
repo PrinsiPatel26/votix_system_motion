@@ -11,7 +11,7 @@ export const applications: Application[] = [
   'A high-flow axial impeller sized to roughly one third of the tank diameter, positioned to produce a full top-to-bottom circulation loop with a verified blend time.',
   agitators: ['top-entry-agitator', 'side-entry-agitator', 'bottom-entry-agitator'],
   impellers: ['hydrofoil', 'pitched-blade-turbine', 'marine-propeller'],
-  industries: ['dairy', 'food-beverage', 'chemical', 'biogas'],
+  industries: ['dairy', 'food-beverage', 'chemical'],
   icon: 'Waves'
 },
 {
@@ -37,7 +37,7 @@ export const applications: Application[] = [
   'Axial impellers with adequate bottom clearance and power input to exceed the just-suspended condition for the specific particle size and density.',
   agitators: ['top-entry-agitator', 'side-entry-agitator', 'bottom-entry-agitator'],
   impellers: ['pitched-blade-turbine', 'hydrofoil', 'marine-propeller'],
-  industries: ['chemical', 'food-beverage', 'pharmaceutical', 'biogas'],
+  industries: ['chemical', 'food-beverage', 'pharmaceutical'],
   icon: 'ArrowDownUp'
 },
 {
@@ -102,7 +102,7 @@ export const applications: Application[] = [
   'A radial disc turbine positioned above the sparger to shear the gas stream, with upper axial stages distributing the bubbles through the vessel.',
   agitators: ['top-entry-agitator', 'bottom-entry-agitator'],
   impellers: ['rushton-turbine', 'hydrofoil'],
-  industries: ['biotech', 'chemical', 'biogas'],
+  industries: ['biotech', 'chemical'],
   icon: 'Wind'
 },
 {
@@ -115,7 +115,7 @@ export const applications: Application[] = [
   'Robust impellers with wear-resistant detailing and a flow pattern designed to break floating layers while keeping the bottom free of deposits.',
   agitators: ['side-entry-agitator', 'custom-agitator', 'top-entry-agitator'],
   impellers: ['marine-propeller', 'pitched-blade-turbine'],
-  industries: ['biogas', 'chemical', 'food-beverage'],
+  industries: ['chemical', 'food-beverage'],
   icon: 'Boxes'
 },
 {

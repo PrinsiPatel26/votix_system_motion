@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*
+
+# Generated TypeScript/Vite files
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js

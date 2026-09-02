@@ -18,14 +18,10 @@ import { applications } from '../../data/applications';
 import { EMAIL_RE } from '../../utils/validation';
 
 const quickLinks = [
-{ label: 'Home', href: '/' },
 { label: 'Products', href: '/products' },
 { label: 'Industries', href: '/industries' },
 { label: 'Applications', href: '/applications' },
-{ label: 'Technology', href: '/technology' },
 { label: 'About Us', href: '/about' },
-{ label: 'Support', href: '/support' },
-{ label: 'Resources', href: '/resources' },
 { label: 'Contact', href: '/contact' }];
 
 
@@ -55,7 +51,10 @@ export function Footer() {
       <Container className="relative py-14 lg:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <Logo variant="light" showTagline={false} />
+            <Logo
+              variant="light"
+              showTagline={false}
+              className="!h-32 !w-[220px] sm:!h-36 sm:!w-[260px] lg:!h-40 lg:!w-[300px]" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-steel-200">
               VOTIX Systems engineers industrial agitators, impellers and mixing systems for food,
               dairy, pharmaceutical, chemical and process industries — designed around your product,

@@ -16,15 +16,15 @@ interface LogoProps {
 export function Logo({ variant = 'dark', className, showTagline = true, compact = false }: LogoProps) {
   return (
     <span className={cn(
-      'inline-flex h-12 w-44 items-center justify-center overflow-hidden',
+      'inline-flex h-14 w-52 items-center justify-start overflow-hidden',
       'rounded-sm',
-      compact && 'h-9 w-32',
+      compact && 'h-10 w-36',
       className
     )}>
       <img
         src="/votix.download.png"
-        alt="VOTIX Systems — Motion, Engineered."
-        className="h-auto w-full object-contain drop-shadow-[0_1px_1px_rgba(7,26,61,0.3)]"
+        alt="VOTIX Systems — Motion, Engineered"
+        className="h-auto max-h-full w-full object-contain drop-shadow-[0_1px_1px_rgba(7,26,61,0.3)]"
         loading="eager"
         decoding="async" />
     </span>);

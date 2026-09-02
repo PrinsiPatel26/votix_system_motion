@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { SmartImage } from '../ui/SmartImage';
 import { Badge } from '../ui/Badge';
@@ -8,6 +9,8 @@ import type { Impeller } from '../../types';
 
 interface ImpellerCardProps {
   impeller: Impeller;
+  imageSrc?: string;
+  imageObjectFit?: 'cover' | 'contain';
   variant?: 'grid' | 'shelf';
   expanded?: boolean;
   onToggle?: () => void;
@@ -15,6 +18,8 @@ interface ImpellerCardProps {
 
 export function ImpellerCard({
   impeller,
+  imageSrc,
+  imageObjectFit = 'cover',
   variant = 'grid',
   expanded = false,
   onToggle
@@ -31,21 +36,25 @@ export function ImpellerCard({
       variant === 'shelf' ? 'w-[230px] shrink-0 snap-start sm:w-[260px]' : ''}`
       }>
       
-      <div className="relative overflow-hidden bg-mist">
-        <SmartImage
-          src={impeller.image}
-          alt={`${impeller.name} impeller`}
-          ratio="aspect-square"
-          imgClassName="transition-transform duration-300 ease-smooth group-hover:scale-[1.04]" />
-        
-      </div>
+      <Link to={`/products/impellers/${impeller.slug}`} className="block overflow-hidden bg-mist" aria-label={`Open ${impeller.name} impeller details`}>
+        <div className="relative overflow-hidden bg-mist">
+          <SmartImage
+            src={imageSrc ?? impeller.image}
+            alt={`${impeller.name} impeller`}
+            ratio="aspect-square"
+            objectFit={imageObjectFit}
+            imgClassName="transition-transform duration-300 ease-smooth group-hover:scale-[1.04]" />
+        </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-4">
         <Badge tone="brand" className="self-start">
           {impeller.familyLabel}
         </Badge>
         <h3 className="mt-2.5 font-display text-base font-extrabold leading-snug text-navy">
-          {impeller.name}
+          <Link to={`/products/impellers/${impeller.slug}`} className="hover:text-brand-600">
+            {impeller.name}
+          </Link>
         </h3>
         <p className="mt-1.5 text-[13px] leading-snug text-steel-600">{impeller.purpose}</p>
 

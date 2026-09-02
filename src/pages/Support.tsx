@@ -80,7 +80,7 @@ export function Support() {
               key={title}
               className="rounded-xl border border-steel-100 bg-white p-6 shadow-card">
               
-                <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent-50 text-accent-700">
+                <span className="feature-icon flex h-11 w-11 items-center justify-center rounded-lg border border-accent-200 bg-white text-accent-600">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-extrabold text-navy">{title}</h3>

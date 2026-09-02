@@ -42,7 +42,7 @@ export function SectionHeading({
       }
       <Tag
         className={cn(
-          'font-display text-[28px] font-extrabold leading-[1.12] tracking-tight sm:text-4xl lg:text-[42px]',
+          'font-display text-[clamp(28px,3.2vw,42px)] font-extrabold leading-[1.12] tracking-tight',
           onDark ? 'text-white' : 'text-navy'
         )}>
         

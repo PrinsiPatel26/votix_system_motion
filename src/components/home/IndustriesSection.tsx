@@ -1,49 +1,75 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Container } from '../ui/Container';
-import { SectionHeading } from '../ui/SectionHeading';
-import { Button } from '../ui/Button';
-import { IndustryCard } from '../industries/IndustryCard';
 import { industries } from '../../data/industries';
 import { fadeUp, staggerParent, viewportOnce } from '../../utils/motion';
 
+const industryIconImages = {
+  dairy: '/dairy_icon-removebg-preview.png',
+  'food-beverage': '/food_beverage_icon-removebg-preview.png',
+  pharmaceutical: '/pharmaceutical_icon-removebg-preview.png',
+  chemical: '/chemical_process_icon-removebg-preview.png',
+  cosmetics: '/cosmetics_icon-removebg-preview.png',
+  biotech: '/biotechnology_icon-removebg-preview.png',
+} as const;
+
+const industryLabels = {
+  dairy: 'Dairy',
+  'food-beverage': 'Food & Beverage',
+  pharmaceutical: 'Pharmaceutical',
+  chemical: 'Chemical / Process',
+  cosmetics: 'Cosmetics',
+  biotech: 'Biotechnology',
+} as const;
+
 export function IndustriesSection() {
   return (
-    <section className="border-t border-steel-100 bg-mist py-16 lg:py-20" aria-labelledby="industries-heading">
+    <section className="border-t border-steel-100 bg-mist pb-0 pt-16 lg:pt-20" aria-labelledby="industries-heading">
       <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeading
-            eyebrow="Industries We Serve"
-            title={
-            <span id="industries-heading">
-                Mixing duties differ. <span className="text-brand-600">So do our agitators.</span>
-              </span>
-            }
-            description="Every sector places its own demands on hygiene, materials, shear and duty cycle. Select your industry to see the configurations we build for it." />
-          
-          <Button to="/industries" variant="outline" className="shrink-0 self-start md:self-auto">
-            All industries
-            <ArrowRightIcon className="h-4 w-4" aria-hidden />
-          </Button>
-        </div>
-
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="mb-8 text-center">
+          <h2 id="industries-heading" className="font-display text-[clamp(22px,2.2vw,32px)] font-extrabold uppercase tracking-[0.08em] text-navy leading-[1.2]">
+            Industries <span className="text-accent">We Serve</span>
+          </h2>
+          <span className="mx-auto mt-3 block h-0.5 w-12 bg-accent" aria-hidden />
+        </motion.div>
         <motion.ul
           variants={staggerParent(0.05)}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          className="grid grid-cols-2 border-y border-steel-200 bg-white sm:grid-cols-3 lg:grid-cols-6">
           
-          {industries.map((industry, i) =>
+          {industries.map((industry) => {
+            const iconImage = industryIconImages[industry.slug as keyof typeof industryIconImages];
+
+            return (
           <motion.li
             key={industry.slug}
             variants={fadeUp}
-            className={i === 0 ? 'col-span-2 lg:col-span-2 lg:row-span-1' : ''}>
+            className="border-steel-200 sm:border-r sm:last:border-r-0">
             
-              <IndustryCard industry={industry} size={i === 0 ? 'md' : 'sm'} />
+              <Link
+                to={`/industries/${industry.slug}`}
+                className="group flex min-h-36 flex-col items-center justify-center gap-3 px-3 py-6 text-center transition-colors duration-200 ease-smooth hover:bg-mist focus-visible:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
+                aria-label={`Explore ${industry.name} mixing solutions`}>
+                <img
+                  src={iconImage}
+                  alt=""
+                  className="h-12 w-12 object-contain transition-transform duration-200 group-hover:scale-105"
+                  aria-hidden />
+                <span className="font-display text-xs font-extrabold uppercase leading-tight tracking-[0.04em] text-navy">
+                  {industryLabels[industry.slug as keyof typeof industryLabels]}
+                </span>
+              </Link>
             </motion.li>
-          )}
+            );
+          })}
         </motion.ul>
       </Container>
     </section>);

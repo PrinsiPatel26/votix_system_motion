@@ -139,29 +139,6 @@ export const industries: Industry[] = [
   'Consistent conditions throughout the vessel',
   'Reliable scale-up from lab to production']
 
-},
-{
-  slug: 'biogas',
-  name: 'Biogas & Renewable Energy',
-  shortName: 'Biogas',
-  tagline: 'Continuous digester mixing under heavy-duty conditions',
-  description:
-  'Anaerobic digesters run continuously with abrasive, fibrous and high-solids substrates. VOTIX side-entry and long-shaft agitators are built for these duties, keeping solids in motion and preventing floating layers and sediment.',
-  image: images.industries.biogas,
-  requirements: [
-  'Handling of fibrous, abrasive and high-solids substrates',
-  'Prevention of floating layers and bottom sediment',
-  'Serviceable seal systems for continuous operation',
-  'Energy-efficient mixing over long run hours'],
-
-  agitators: ['side-entry-agitator', 'top-entry-agitator', 'custom-agitator'],
-  applications: ['suspension', 'blending', 'solid-liquid-mixing', 'heat-transfer'],
-  benefits: [
-  'Stable gas production through uniform digestion',
-  'Lower specific energy consumption per m³ of digester',
-  'Reduced manual intervention and cleaning',
-  'Components designed for straightforward field service']
-
 }];
 
 

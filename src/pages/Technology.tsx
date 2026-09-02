@@ -165,7 +165,7 @@ export function Technology() {
                     <div className="relative h-full min-h-[180px] overflow-hidden rounded-xl border border-steel-100 bg-mist">
                       <div className="absolute inset-0 votix-grid opacity-70" aria-hidden />
                       <span
-                    className="absolute right-6 top-6 font-display text-6xl font-black text-navy/5"
+                    className="absolute right-6 top-6 font-display text-6xl font-extrabold text-navy/5"
                     aria-hidden>
                     
                         {String(index + 1).padStart(2, '0')}

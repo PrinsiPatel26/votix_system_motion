@@ -8,15 +8,36 @@ import { SmartImage } from '../ui/SmartImage';
 import { products } from '../../data/products';
 import { fadeUp, staggerParent, viewportOnce } from '../../utils/motion';
 
+const productRouteMap: Record<string, string> = {
+  'top-entry-agitator': '/products/top-entry-agitators',
+  'side-entry-agitator': '/products/side-entry-agitators',
+  'bottom-entry-agitator': '/products/bottom-entry-agitators',
+  'high-shear-dissolver': '/products/high-shear-dissolver',
+  'coaxial-agitator': '/products/coaxial-agitator',
+  'custom-agitator': '/products/custom-agitator'
+};
+
 export function ProductCategories() {
   return (
     <section className="py-16 lg:py-20" aria-labelledby="categories-heading">
       <Container>
-        <SectionHeading
-          eyebrow="Product Categories"
-          title={<span id="categories-heading">Choose the entry position and drive concept</span>}
-          description="Top, side and bottom entry cover most process vessels. High shear, coaxial and custom-engineered systems handle the duties they cannot." />
-        
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="mb-8 text-center">
+          <h2 id="categories-heading" className="font-display text-[clamp(22px,2.2vw,32px)] font-extrabold uppercase tracking-[0.02em] text-navy">
+            <span className="text-navy">Our</span> <span className="text-accent">Agitator Range</span>
+          </h2>
+          <span className="mx-auto mt-3 block h-0.5 w-12 bg-accent" aria-hidden />
+          <h3 className="mt-8 mx-auto max-w-[1100px] font-display text-[clamp(20px,2vw,30px)] font-extrabold leading-[1.08] tracking-tight text-navy">
+            Choose the entry position and drive concept
+          </h3>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-steel-600 sm:text-[17px]">
+            Top, side and bottom entry cover most process vessels. High shear, coaxial and custom-engineered systems handle the duties they cannot.
+          </p>
+        </motion.div>
 
         <motion.ul
           variants={staggerParent(0.06)}
@@ -25,10 +46,13 @@ export function ProductCategories() {
           viewport={viewportOnce}
           className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           
-          {products.map((product) =>
-          <motion.li key={product.slug} variants={fadeUp}>
+          {products.map((product) => {
+            const href = productRouteMap[product.slug] ?? `/products/${product.slug}`;
+
+            return (
+            <motion.li key={product.slug} variants={fadeUp}>
               <Link
-              to={`/products/${product.slug}`}
+              to={href}
               className="group flex h-full flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-card transition-[border-color,box-shadow,transform] duration-200 ease-smooth hover:-translate-y-1 hover:border-accent/60 hover:shadow-lift">
               
                 <div className="relative overflow-hidden bg-mist">
@@ -58,7 +82,8 @@ export function ProductCategories() {
                 </div>
               </Link>
             </motion.li>
-          )}
+            );
+          })}
         </motion.ul>
       </Container>
     </section>);

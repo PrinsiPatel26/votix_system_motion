@@ -16,7 +16,6 @@ export interface NavItem {
 }
 
 export const navigation: NavItem[] = [
-{ label: 'Home', href: '/' },
 {
   label: 'Products',
   href: '/products',
@@ -39,9 +38,9 @@ export const navigation: NavItem[] = [
   {
     title: 'Types of Agitators',
     items: [
-    { label: 'Top Entry Agitators', href: '/products/top-entry-agitator' },
-    { label: 'Side Entry Agitators', href: '/products/side-entry-agitator' },
-    { label: 'Bottom Entry Agitators', href: '/products/bottom-entry-agitator' },
+    { label: 'Top Entry Agitators', href: '/products/top-entry-agitators' },
+    { label: 'Side Entry Agitators', href: '/products/side-entry-agitators' },
+    { label: 'Bottom Entry Agitators', href: '/products/bottom-entry-agitators' },
     { label: 'High Shear / Dissolver', href: '/products/high-shear-dissolver' },
     { label: 'Coaxial Agitators', href: '/products/coaxial-agitator' }]
 
@@ -69,46 +68,13 @@ export const navigation: NavItem[] = [
     { label: 'Pharmaceutical', href: '/industries/pharmaceutical' },
     { label: 'Chemical', href: '/industries/chemical' },
     { label: 'Cosmetics', href: '/industries/cosmetics' },
-    { label: 'Biotech', href: '/industries/biotech' },
-    { label: 'Biogas & Renewable Energy', href: '/industries/biogas' }]
+    { label: 'Biotech', href: '/industries/biotech' }]
 
   }]
 
 },
 { label: 'Applications', href: '/applications' },
-{
-  label: 'Technology',
-  href: '/technology',
-  groups: [
-  {
-    items: [
-    { label: 'Mixing Technology', href: '/technology#mixing-technology' },
-    { label: 'Engineering Expertise', href: '/technology#engineering' },
-    { label: 'Process Optimization', href: '/technology#process-optimization' },
-    { label: 'CFD / Flow Simulation', href: '/technology#cfd' },
-    { label: 'Custom Design', href: '/technology#custom-design' }]
-
-  }]
-
-},
-{ label: 'About Us', href: '/about' },
-{ label: 'Support', href: '/support' },
-{
-  label: 'Resources',
-  href: '/resources',
-  groups: [
-  {
-    items: [
-    { label: 'Brochures', href: '/resources?type=Brochure' },
-    { label: 'Technical Documents', href: '/resources?type=Technical+Document' },
-    { label: 'Case Studies', href: '/resources?type=Case+Study' },
-    { label: 'Videos', href: '/resources?type=Video' },
-    { label: 'News', href: '/resources?type=News' },
-    { label: 'FAQs', href: '/resources#faqs' }]
-
-  }]
-
-}];
+{ label: 'About Us', href: '/about' }];
 
 
 export const company = {

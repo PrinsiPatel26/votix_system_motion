@@ -62,7 +62,7 @@ export function TechnologySection() {
               
               {pillars.map(({ icon: Icon, title, text }) =>
               <motion.li key={title} variants={fadeUp} className="flex gap-3.5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-accent">
+                  <span className="feature-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-fluid/40 bg-white/5 text-fluid">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <span>

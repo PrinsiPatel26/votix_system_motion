@@ -5,7 +5,7 @@
  */
 export const images = {
   hero: {
-    agitator: "/46fa9fbe-edd9-44ff-a0d0-6c56b8164d3e.jpg"
+    agitator: "/ChatGPT%20Image%20Aug%2031,%202026,%2010_00_09%20AM-v.png"
 
   },
   products: {
@@ -51,9 +51,7 @@ export const images = {
 
     cosmetics: "/c4cdf25f-90e3-419a-bea0-d9afa2ec4e2c.jpg",
 
-    biotech: "/0dcacda3-3dcf-4b12-9195-7fcd63ae2b11.jpg",
-
-    biogas: "/ff7d413b-aa46-4e6d-abbe-e9ace8a6f231.jpg"
+    biotech: "/0dcacda3-3dcf-4b12-9195-7fcd63ae2b11.jpg"
 
   },
   engineering: {
@@ -64,7 +62,7 @@ export const images = {
 
   },
   about: {
-    factory: "/afcc9982-c3ff-47c1-ae43-838eb01c438d.jpg",
+    factory: "/votix_system11.png",
 
     manufacturing: "/6982a6c9-6b43-4b21-b5e3-6011d0c1c4ff.jpg",
 

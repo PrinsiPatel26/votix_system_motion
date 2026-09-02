@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { QuoteProvider } from './contexts/QuoteContext';
 import { Home } from './pages/Home';
@@ -9,6 +10,27 @@ const ProductDetail = lazy(() =>
 import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail }))
 );
 const Impellers = lazy(() => import('./pages/Impellers').then((m) => ({ default: m.Impellers })));
+const ImpellerDetail = lazy(() =>
+  import('./pages/ImpellerDetail').then((m) => ({ default: m.ImpellerDetail }))
+);
+const TopEntryAgitators = lazy(() =>
+  import('./pages/TopEntryAgitators').then((m) => ({ default: m.TopEntryAgitators }))
+);
+const TopEntrySeriesDetail = lazy(() =>
+  import('./pages/TopEntrySeriesDetail').then((m) => ({ default: m.TopEntrySeriesDetail }))
+);
+const SideEntryAgitators = lazy(() =>
+  import('./pages/SideEntryAgitators').then((m) => ({ default: m.SideEntryAgitators }))
+);
+const SideEntrySeriesDetail = lazy(() =>
+  import('./pages/SideEntrySeriesDetail').then((m) => ({ default: m.SideEntrySeriesDetail }))
+);
+const BottomEntryAgitators = lazy(() =>
+  import('./pages/BottomEntryAgitators').then((m) => ({ default: m.BottomEntryAgitators }))
+);
+const BottomEntrySeriesDetail = lazy(() =>
+  import('./pages/BottomEntrySeriesDetail').then((m) => ({ default: m.BottomEntrySeriesDetail }))
+);
 const Industries = lazy(() => import('./pages/Industries').then((m) => ({ default: m.Industries })));
 const IndustryDetail = lazy(() =>
 import('./pages/IndustryDetail').then((m) => ({ default: m.IndustryDetail }))
@@ -40,12 +62,37 @@ export function App() {
   return (
     <BrowserRouter>
       <QuoteProvider>
+        <AnimatedRoutes />
+      </QuoteProvider>
+    </BrowserRouter>);
+
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  const routeKey = `${location.pathname}${location.search}${location.hash}`;
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={routeKey}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}>
         <Suspense fallback={<RouteFallback />}>
-          <Routes>
+          <Routes location={location}>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/impellers" element={<Impellers />} />
+              <Route path="/products/impellers/:slug" element={<ImpellerDetail />} />
+              <Route path="/products/top-entry-agitators" element={<TopEntryAgitators />} />
+              <Route path="/products/top-entry-agitators/:slug" element={<TopEntrySeriesDetail />} />
+              <Route path="/products/side-entry-agitators" element={<SideEntryAgitators />} />
+              <Route path="/products/side-entry-agitators/:slug" element={<SideEntrySeriesDetail />} />
+              <Route path="/products/bottom-entry-agitators" element={<BottomEntryAgitators />} />
+              <Route path="/products/bottom-entry-agitators/:slug" element={<BottomEntrySeriesDetail />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/:slug" element={<IndustryDetail />} />
@@ -61,7 +108,6 @@ export function App() {
             </Route>
           </Routes>
         </Suspense>
-      </QuoteProvider>
-    </BrowserRouter>);
-
+      </motion.div>
+    </AnimatePresence>);
 }

@@ -40,7 +40,7 @@ export function ResourceDetail() {
       <section className="py-20 lg:py-28">
         <Container className="text-center">
           <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Resource not found</p>
-          <h1 className="mt-4 font-display text-4xl font-black text-navy">This resource is unavailable.</h1>
+          <h1 className="mt-4 font-display text-4xl font-extrabold text-navy">This resource is unavailable.</h1>
           <Button to="/resources" variant="primary" className="mt-8">Back to Resources</Button>
         </Container>
       </section>
@@ -64,7 +64,7 @@ export function ResourceDetail() {
               <Badge tone="accent">{resource.type}</Badge>
               <span className="inline-flex items-center gap-1 text-sm text-steel-300"><CalendarIcon className="h-4 w-4" aria-hidden />{formatDate(resource.date)}</span>
             </div>
-            <h1 className="mt-5 font-display text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">{resource.title}</h1>
+            <h1 className="mt-5 font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">{resource.title}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-steel-200">{resource.description}</p>
           </div>
         </Container>
