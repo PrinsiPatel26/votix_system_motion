@@ -135,7 +135,7 @@ export function CategorySeriesSection({ category }: { category: SeriesCategory }
                     type="button"
                     onClick={() => openQuote({ product: series.name })}
                     className="inline-flex min-h-[40px] items-center rounded-md px-3 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
-                    Enquire
+                    Enquiry
                   </button>
                 </div>
               </div>
