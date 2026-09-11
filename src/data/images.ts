@@ -20,7 +20,8 @@ export const images = {
     sideEntry: "/assets/VTX%20SE%20SERIES.png",
     sideEntryStandard: "/assets/VTX%20SE%20SERIES%20-%201.png",
     sideEntryHighFlow: "/assets/VTX%20SEH%20SERIES-1.png",
-    sideEntryBlending: "/assets/vtx_sb_1.png",
+    sideEntryBlending: "/assets/VTX%20SB%20SERIES.png",
+    sideEntryBlendingPrimary: "/assets/vtx_sb_new_1.png",
     sideEntryBlendingSecondary: "/assets/vtx_sb_2.png",
 
     bottomEntry: "/assets/vtx_be_1.png",

@@ -61,6 +61,56 @@ button,
 :root {
   --header-height: 68px;
 }
+.votix-loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #00193c;
+  opacity: 1;
+  transition: opacity 380ms ease;
+}
+.votix-loading-screen--exiting {
+  opacity: 0;
+  pointer-events: none;
+}
+.votix-loading-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(58vw, 280px);
+  height: min(58vw, 280px);
+}
+.votix-loading-ring {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(255, 255, 255, 0.16);
+  border-top-color: #f58220;
+  border-right-color: rgba(245, 130, 32, 0.65);
+  border-radius: 9999px;
+  animation: votix-loading-spin 1.25s linear infinite;
+}
+.votix-loading-logo {
+  display: block;
+  width: 72%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+@keyframes votix-loading-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .votix-loading-ring { animation-duration: 2.5s; }
+  .votix-loading-screen { transition-duration: 1ms; }
+}
 *:focus-visible {
   outline: 2px solid #073b82;
   outline-offset: 2px;

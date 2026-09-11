@@ -8,6 +8,7 @@ import { PageHero } from '../components/layout/PageHero';
 import { ProductGallery } from '../components/products/ProductGallery';
 import { ProductSpecs } from '../components/products/ProductSpecs';
 import { RelatedProducts } from '../components/products/RelatedProducts';
+import { CategorySeriesSection, type SeriesCategory } from '../components/products/CategorySeriesSection';
 import { QuoteCTA } from '../components/home/QuoteCTA';
 import { getProduct } from '../data/products';
 import { industries } from '../data/industries';
@@ -33,6 +34,11 @@ export function ProductDetail() {
 
   const productIndustries = industries.filter((i) => product.industries.includes(i.slug));
   const productApplications = applications.filter((a) => product.applications.includes(a.slug));
+  const seriesCategory: SeriesCategory | undefined =
+    product.category === 'top-entry' ||
+    product.category === 'side-entry' ||
+    product.category === 'bottom-entry' ||
+    product.category === 'custom' ? product.category : undefined;
 
   return (
     <>
@@ -153,6 +159,7 @@ export function ProductDetail() {
         </Container>
       </section>
 
+      {seriesCategory && <CategorySeriesSection category={seriesCategory} />}
       <RelatedProducts slugs={product.related} />
       <QuoteCTA prefill={{ product: product.name }} />
     </>);

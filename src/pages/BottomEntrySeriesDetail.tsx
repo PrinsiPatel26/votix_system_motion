@@ -8,6 +8,7 @@ import { PageHero } from '../components/layout/PageHero';
 import { QuoteCTA } from '../components/home/QuoteCTA';
 import { ProductImageSlider } from '../components/ui/ProductImageSlider';
 import { SmartImage } from '../components/ui/SmartImage';
+import { CategorySeriesSection } from '../components/products/CategorySeriesSection';
 import { images } from '../data/images';
 import { getBottomEntrySeries } from '../data/bottomEntrySeries';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -284,6 +285,7 @@ export function BottomEntrySeriesDetail() {
         </Container>
       </section>
 
+      <CategorySeriesSection category="bottom-entry" />
       <QuoteCTA prefill={{ product: series.name }} />
     </>
   );

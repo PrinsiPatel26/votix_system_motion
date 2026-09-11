@@ -118,7 +118,7 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'VTX-SUS is engineered for reliable solids suspension and bottom-to-top circulation. Maintains suspension uniformity, prevents settling, and ensures consistent product concentration.',
     applications: ['Solids Suspension', 'Sedimentation Prevention', 'Bottom-to-Top Circulation', 'Concentration Uniformity'],
     industries: ['Food & Beverage', 'Dairy', 'Ingredient Storage', 'Process Liquids with Solids', 'Chemical Processing'],
-    image: images.products.topEntry,
+    image: images.products.sideEntryBlending,
     gallery: [images.products.topEntry, images.impellers.hydrofoil, images.impellers.pitchedBlade, images.engineering.cfd],
     benefits: ['Reliable Suspension', 'Prevents Settling', 'Consistent Uniformity', 'Bottom Coverage'],
     overview: [
@@ -163,8 +163,8 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'VTX-SB is optimized for uniform blending and product uniformity across large-volume storage and processing tanks. Engineered for low-to-medium viscosity liquid-liquid blending and temperature equalization.',
     applications: ['Liquid-Liquid Blending', 'Concentration Equalization', 'Temperature Equalization', 'Product Uniformity'],
     industries: ['Food & Beverage', 'Dairy', 'Liquid Storage', 'Batch Blending', 'Chemical Processing'],
-    image: images.products.sideEntryBlending,
-    gallery: [images.products.sideEntryBlending, images.products.sideEntryBlendingSecondary],
+    image: images.products.sideEntryBlendingPrimary,
+    gallery: [images.products.sideEntryBlendingPrimary, images.products.sideEntryBlendingSecondary],
     benefits: ['Uniform Blending', 'Quick Mix Time', 'Temperature Control', 'Large Tank Coverage'],
     overview: [
       'VTX-SB is optimized for uniform blending and product uniformity across large-volume tanks.',
