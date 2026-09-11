@@ -10,6 +10,7 @@ import { SmartImage } from '../components/ui/SmartImage';
 import { getImpeller, impellers } from '../data/impellers';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { NotFound } from './NotFound';
+import { useQuote } from '../contexts/QuoteContext';
 
 const impellerTemplates = {
   hydrofoil: {
@@ -220,6 +221,7 @@ export function ImpellerDetail() {
   const { slug } = useParams<{ slug: string }>();
   const impeller = slug ? getImpeller(slug) : undefined;
   const [activeTab, setActiveTab] = useState<string>('Overview');
+  const { openQuote } = useQuote();
 
   usePageMeta(
     impeller ? `VOTIX Systems | ${impeller.name}` : 'VOTIX Systems | Impeller not found',
@@ -390,11 +392,8 @@ export function ImpellerDetail() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button variant="accent" size="lg" className="min-w-[180px]">
+                <Button variant="accent" size="lg" className="min-w-[180px]" onClick={() => openQuote({ product: impeller.name })}>
                   REQUEST A QUOTE
-                </Button>
-                <Button variant="outline" size="lg" className="min-w-[180px]">
-                  DOWNLOAD DATASHEET
                 </Button>
               </div>
             </div>

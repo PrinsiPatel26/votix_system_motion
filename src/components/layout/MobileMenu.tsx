@@ -6,6 +6,7 @@ import { navigation, company } from '../../data/navigation';
 import { Logo } from '../ui/Logo';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 import { EASE_SMOOTH } from '../../utils/motion';
+import { useQuote } from '../../contexts/QuoteContext';
 
 interface MobileMenuProps {
   open: boolean;
@@ -16,6 +17,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const [expanded, setExpanded] = useState<string | null>(null);
   const { pathname } = useLocation();
   const reduce = useReducedMotion();
+  const { openQuote } = useQuote();
   useBodyScrollLock(open);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               })}
             </ul>
           </nav>
-          <div className="border-t border-white/10 px-5 py-5"><Link to="/contact" onClick={handleNavigation} className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md bg-accent px-7 py-3.5 text-center text-base font-semibold text-navy-950 shadow-sm transition-colors duration-200 ease-smooth hover:bg-accent-400">Request a Quote</Link><div className="mt-3 space-y-1.5"><a href={company.phoneHref} className="flex min-h-[40px] items-center gap-2 text-sm font-medium text-white/70 hover:text-white"><PhoneIcon className="h-4 w-4" aria-hidden />{company.phone}</a>{company.emails.map((email) => <a key={email} href={`mailto:${email}`} className="flex min-h-[40px] items-center gap-2 text-sm font-medium text-white/70 hover:text-white"><MailIcon className="h-4 w-4" aria-hidden />{email}</a>)}</div></div>
+          <div className="border-t border-white/10 px-5 py-5"><button type="button" onClick={() => { handleNavigation(); openQuote(); }} className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md bg-accent px-7 py-3.5 text-center text-base font-semibold text-navy-950 shadow-sm transition-colors duration-200 ease-smooth hover:bg-accent-400">Request a Quote</button><div className="mt-3 space-y-1.5"><a href={company.phoneHref} className="flex min-h-[40px] items-center gap-2 text-sm font-medium text-white/70 hover:text-white"><PhoneIcon className="h-4 w-4" aria-hidden />{company.phone}</a>{company.emails.map((email) => <a key={email} href={`mailto:${email}`} className="flex min-h-[40px] items-center gap-2 text-sm font-medium text-white/70 hover:text-white"><MailIcon className="h-4 w-4" aria-hidden />{email}</a>)}</div></div>
         </motion.div>
       </div>}
     </AnimatePresence>

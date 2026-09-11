@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, CheckIcon } from 'lucide-react';
+import { CheckIcon } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { SmartImage } from '../ui/SmartImage';
 import { Badge } from '../ui/Badge';
@@ -8,6 +8,7 @@ import { products } from '../../data/products';
 import { topEntrySeries } from '../../data/topEntrySeries';
 import { sideEntrySeries } from '../../data/sideEntrySeries';
 import { bottomEntrySeries } from '../../data/bottomEntrySeries';
+import { useQuote } from '../../contexts/QuoteContext';
 
 export type SeriesCategory = 'top-entry' | 'side-entry' | 'bottom-entry' | 'custom';
 
@@ -81,6 +82,7 @@ function getSeriesCards(category: SeriesCategory): SeriesCardData[] {
 export function CategorySeriesSection({ category }: { category: SeriesCategory }) {
   const seriesCards = getSeriesCards(category);
   const categoryLabel = categoryLabels[category];
+  const { openQuote } = useQuote();
 
   return (
     <section className="bg-mist py-12 lg:py-16">
@@ -129,12 +131,12 @@ export function CategorySeriesSection({ category }: { category: SeriesCategory }
                 </ul>
 
                 <div className="mt-auto pt-5">
-                  <Link
-                    to={series.href}
-                    className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-navy px-4 text-sm font-semibold text-white transition-colors duration-200 ease-smooth hover:bg-navy-700">
-                    VIEW DETAILS
-                    <ArrowRightIcon className="h-4 w-4" aria-hidden />
-                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => openQuote({ product: series.name })}
+                    className="inline-flex min-h-[40px] items-center rounded-md px-3 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
+                    Enquire
+                  </button>
                 </div>
               </div>
             </article>

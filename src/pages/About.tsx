@@ -19,8 +19,11 @@ import { Button } from '../components/ui/Button';
 import { SmartImage } from '../components/ui/SmartImage';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { images } from '../data/images';
+import { useQuote } from '../contexts/QuoteContext';
 
 export function About() {
+  const { openQuote } = useQuote();
+
   usePageMeta(
     'VOTIX Systems | About Our Engineering Company',
     'VOTIX Systems designs and manufactures industrial agitators and mixing systems, combining process engineering, precision manufacturing and long-term technical support.'
@@ -375,7 +378,7 @@ export function About() {
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg" className="min-w-[200px] justify-center bg-white/10 text-white hover:bg-white/20">
+                <Button variant="outline" size="lg" className="min-w-[200px] justify-center bg-white/10 text-white hover:bg-white/20" onClick={() => openQuote()}>
                   REQUEST A QUOTE
                 </Button>
               </div>

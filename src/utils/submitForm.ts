@@ -1,10 +1,6 @@
 export type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-/**
- * Isolated submit handler. No backend is configured yet — this simulates the
- * network round-trip so the UI states are real. Replace the body with a fetch()
- * call to the real endpoint when the API is available.
- */
+/** Existing demo submission handler used by the contact and support forms. */
 export async function submitForm(
 formName: string,
 payload: Record<string, unknown>)
@@ -14,4 +10,10 @@ payload: Record<string, unknown>)
   await new Promise((resolve) => setTimeout(resolve, 900));
   const reference = `VTX-${Date.now().toString().slice(-6)}`;
   return { ok: true, reference };
+}
+
+/** Quote-specific boundary until a real quote/email API is configured. */
+export async function submitQuoteRequest(payload: Record<string, unknown>): Promise<never> {
+  void payload;
+  throw new Error('Quote submission service is not configured');
 }

@@ -10,6 +10,7 @@ import { products } from '../../data/products';
 import { topEntrySeries } from '../../data/topEntrySeries';
 import { sideEntrySeries } from '../../data/sideEntrySeries';
 import { bottomEntrySeries } from '../../data/bottomEntrySeries';
+import { useQuote } from '../../contexts/QuoteContext';
 import { fadeUp, staggerParent, viewportOnce } from '../../utils/motion';
 
 const productRouteMap: Record<string, string> = {
@@ -34,6 +35,7 @@ const seriesCards = [
 
 export function ProductCategories() {
   const mainEntryProducts = products.filter((product) => mainEntrySlugs.includes(product.slug));
+  const { openQuote } = useQuote();
 
   const renderProductCard = (product: typeof products[number], featured = false) => {
     const href = productRouteMap[product.slug] ?? `/products/${product.slug}`;
@@ -134,10 +136,12 @@ export function ProductCategories() {
                     <p className="font-display text-xs font-extrabold uppercase tracking-[0.14em] text-brand-600">{series.entry}</p>
                     <h4 className="mt-2 font-display text-xl font-extrabold leading-tight text-navy">{series.name}</h4>
                     <p className="mt-2 text-sm leading-relaxed text-steel-600">{series.description}</p>
-                    <Link to={series.href} className="mt-auto inline-flex items-center gap-1.5 pt-5 text-xs font-bold uppercase tracking-[0.1em] text-navy">
-                      View Details
-                      <ArrowRightIcon className="h-3.5 w-3.5 text-accent transition-transform duration-200 ease-smooth group-hover:translate-x-1" aria-hidden />
-                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => openQuote({ product: series.name })}
+                      className="mt-auto inline-flex min-h-[40px] items-center rounded-md px-3 pt-5 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
+                      Enquire
+                    </button>
                   </div>
                 </motion.article>
               )}

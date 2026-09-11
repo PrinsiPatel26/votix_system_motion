@@ -10,6 +10,7 @@ import { topEntrySeries } from '../data/topEntrySeries';
 import { sideEntrySeries } from '../data/sideEntrySeries';
 import { bottomEntrySeries } from '../data/bottomEntrySeries';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { useQuote } from '../contexts/QuoteContext';
 
 type RangeFilter = 'all' | 'vtx-series' | 'top-entry' | 'side-entry' | 'bottom-entry' | 'custom';
 
@@ -70,6 +71,7 @@ const customSeries = new Set(['custom']);
 
 function SeriesCard({ series }: { series: SeriesCard }) {
   const entryLabel = series.category === 'top-entry' ? 'Top Entry' : series.category === 'side-entry' ? 'Side Entry' : 'Bottom Entry';
+  const { openQuote } = useQuote();
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-card transition-[border-color,box-shadow,transform] duration-200 ease-smooth hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift">
@@ -100,10 +102,12 @@ function SeriesCard({ series }: { series: SeriesCard }) {
           ))}
         </ul>
         <div className="mt-auto pt-5">
-          <Link to={series.href} className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-navy px-4 text-sm font-semibold text-white transition-colors duration-200 ease-smooth hover:bg-navy-700">
-            View Details
-            <ArrowRightIcon className="h-4 w-4" aria-hidden />
-          </Link>
+          <button
+            type="button"
+            onClick={() => openQuote({ product: series.name })}
+            className="inline-flex min-h-[40px] items-center rounded-md px-3 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
+            Enquire
+          </button>
         </div>
       </div>
     </article>

@@ -8,8 +8,11 @@ import { SmartImage } from '../components/ui/SmartImage';
 import { Badge } from '../components/ui/Badge';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { bottomEntrySeries } from '../data/bottomEntrySeries';
+import { useQuote } from '../contexts/QuoteContext';
 
 export function BottomEntryAgitators() {
+  const { openQuote } = useQuote();
+
   usePageMeta(
     'VOTIX Systems | Bottom Entry Agitators',
     'Browse the full VOTIX Bottom Entry Agitator range: VTX-BE Standard, VTX-BU U-Impeller, VTX-BEH High-Shear, VTX-BH Hygienic and VTX-BM Multi-Agitator.'
@@ -76,12 +79,12 @@ export function BottomEntryAgitators() {
                   </div>
 
                   <div className="mt-auto pt-5">
-                    <Link
-                      to={`/products/bottom-entry-agitators/${series.slug}`}
-                      className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-navy px-4 text-sm font-semibold text-white transition-colors duration-200 ease-smooth hover:bg-navy-700">
-                      VIEW DETAILS
-                      <ArrowRightIcon className="h-4 w-4" aria-hidden />
-                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => openQuote({ product: series.name })}
+                      className="inline-flex min-h-[40px] items-center rounded-md px-3 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
+                      Enquire
+                    </button>
                   </div>
                 </div>
               </article>

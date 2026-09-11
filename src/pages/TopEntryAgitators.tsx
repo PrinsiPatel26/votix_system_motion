@@ -8,8 +8,11 @@ import { SmartImage } from '../components/ui/SmartImage';
 import { Badge } from '../components/ui/Badge';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { topEntrySeries } from '../data/topEntrySeries';
+import { useQuote } from '../contexts/QuoteContext';
 
 export function TopEntryAgitators() {
+  const { openQuote } = useQuote();
+
   usePageMeta(
     'VOTIX Systems | Top Entry Agitators',
     'Browse the full VOTIX Top Entry Agitator series: VTX-G, VTX-A, VTX-CX, VTX-HS, VTX-JM and VTX-FB.'
@@ -77,12 +80,12 @@ export function TopEntryAgitators() {
                   </div>
 
                   <div className="mt-auto pt-5">
-                    <Link
-                      to={`/products/top-entry-agitators/${series.slug}`}
-                      className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-navy px-4 text-sm font-semibold text-white transition-colors duration-200 ease-smooth hover:bg-navy-700">
-                      VIEW DETAILS
-                      <ArrowRightIcon className="h-4 w-4" aria-hidden />
-                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => openQuote({ product: series.name })}
+                      className="inline-flex min-h-[40px] items-center rounded-md px-3 text-[13px] font-semibold text-accent-700 transition-colors duration-200 ease-smooth hover:bg-accent-50">
+                      Enquire
+                    </button>
                   </div>
                 </div>
               </article>

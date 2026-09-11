@@ -9,6 +9,7 @@ import { QuoteCTA } from '../components/home/QuoteCTA';
 import { ProductImageSlider } from '../components/ui/ProductImageSlider';
 import { SmartImage } from '../components/ui/SmartImage';
 import { CategorySeriesSection } from '../components/products/CategorySeriesSection';
+import { useQuote } from '../contexts/QuoteContext';
 import { images } from '../data/images';
 import { getSideEntrySeries } from '../data/sideEntrySeries';
 import { getImpeller } from '../data/impellers';
@@ -21,6 +22,7 @@ export function SideEntrySeriesDetail() {
   const { slug } = useParams<{ slug: string }>();
   const series = slug ? getSideEntrySeries(slug) : undefined;
   const [activeTab, setActiveTab] = useState<string>('Overview');
+  const { openQuote } = useQuote();
 
   usePageMeta(
     series ? `VOTIX Systems | ${series.name}` : 'VOTIX Systems | Product not found',
@@ -173,7 +175,7 @@ export function SideEntrySeriesDetail() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button variant="accent" size="lg" className="min-w-[180px]">
+                <Button variant="accent" size="lg" className="min-w-[180px]" onClick={() => openQuote({ product: series.name })}>
                   REQUEST A QUOTE
                 </Button>
               </div>
@@ -278,7 +280,7 @@ export function SideEntrySeriesDetail() {
                 TALK TO AN EXPERT
                 <ArrowRightIcon className="h-4 w-4" aria-hidden />
               </Link>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => openQuote({ product: series.name })}>
                 REQUEST A QUOTE
               </Button>
             </div>

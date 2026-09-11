@@ -5,7 +5,7 @@ import { Field, SelectInput, TextArea, TextInput } from '../ui/Field';
 import { industries } from '../../data/industries';
 import { products } from '../../data/products';
 import { applications } from '../../data/applications';
-import { submitForm, type SubmitStatus } from '../../utils/submitForm';
+import { submitQuoteRequest, type SubmitStatus } from '../../utils/submitForm';
 import { requireText, validateEmail, validatePhone, type Errors } from '../../utils/validation';
 
 export interface QuotePrefill {
@@ -28,6 +28,7 @@ interface QuoteFormState {
   temperature: string;
   pressure: string;
   material: string;
+  quantity: string;
   message: string;
 }
 
@@ -45,6 +46,7 @@ const initial = (prefill: QuotePrefill): QuoteFormState => ({
   temperature: '',
   pressure: '',
   material: '',
+  quantity: '',
   message: ''
 });
 
@@ -71,10 +73,9 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
   const validate = (): boolean => {
     const next: Errors<QuoteFormState> = {
       name: requireText(values.name, 'Name'),
-      company: requireText(values.company, 'Company'),
       email: validateEmail(values.email),
       phone: validatePhone(values.phone, true),
-      product: values.product ? undefined : 'Select a product',
+      product: values.product ? undefined : 'Select a product or series',
       message: requireText(values.message, 'Message', 10)
     };
     setErrors(next);
@@ -86,8 +87,7 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
     if (!validate()) return;
     setStatus('submitting');
     try {
-      const res = await submitForm('Quote request', { ...values, attachment });
-      setReference(res.reference);
+      await submitQuoteRequest({ ...values, attachment });
       setStatus('success');
     } catch {
       setStatus('error');
@@ -139,10 +139,10 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
           Your details
         </legend>
         <div className={`grid grid-cols-1 gap-4 ${grid}`}>
-          <Field id="q-name" label="Name" required error={errors.name}>
+          <Field id="q-name" label="Full Name" required error={errors.name}>
             <TextInput id="q-name" name="name" value={values.name} onChange={set('name')} error={errors.name} autoComplete="name" />
           </Field>
-          <Field id="q-company" label="Company" required error={errors.company}>
+          <Field id="q-company" label="Company">
             <TextInput id="q-company" name="company" value={values.company} onChange={set('company')} error={errors.company} autoComplete="organization" />
           </Field>
           <Field id="q-email" label="Email" required error={errors.email}>
@@ -172,9 +172,12 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
           Process data
         </legend>
         <div className={`grid grid-cols-1 gap-4 ${grid}`}>
-          <Field id="q-product" label="Product" required error={errors.product}>
+          <Field id="q-product" label="Product / Series" required error={errors.product}>
             <SelectInput id="q-product" name="product" value={values.product} onChange={set('product')} error={errors.product}>
-              <option value="">Select product</option>
+              <option value="">Select product or series</option>
+              {prefill.product && !products.some((p) => p.name === prefill.product) && (
+                <option value={prefill.product}>{prefill.product}</option>
+              )}
               {products.map((p) =>
               <option key={p.slug} value={p.name}>
                   {p.name}
@@ -183,6 +186,9 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
               <option value="Impellers / Mixing elements">Impellers / Mixing elements</option>
               <option value="Not sure yet">Not sure yet — please advise</option>
             </SelectInput>
+          </Field>
+          <Field id="q-quantity" label="Quantity">
+            <TextInput id="q-quantity" name="quantity" value={values.quantity} onChange={set('quantity')} placeholder="e.g. 1" />
           </Field>
           <Field id="q-application" label="Application">
             <SelectInput id="q-application" name="application" value={values.application} onChange={set('application')}>
@@ -247,7 +253,7 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
 
       {status === 'error' &&
       <p role="alert" className="rounded-md bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
-          Something went wrong while sending your request. Please try again.
+          Unable to submit your enquiry right now. Please try again or contact us directly.
         </p>
       }
 
