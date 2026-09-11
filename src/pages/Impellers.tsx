@@ -14,11 +14,11 @@ import { cn } from '../utils/cn';
 export function Impellers() {
   usePageMeta(
     'VOTIX Systems | Impellers & Mixing Elements',
-    'Hydrofoil, propeller, pitched blade, Rushton, rotor-stator, dissolver, anchor and helical ribbon impellers — matched to flow, shear and viscosity.'
+    'Hydrofoil, propeller, pitched blade, Rushton, rotor-stator, dissolver and anchor impellers — matched to flow, shear and viscosity.'
   );
 
-  const [searchParams] = useSearchParams();
-  const [family, setFamily] = useState<string>(searchParams.get('family') ?? 'all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const family = searchParams.get('family') ?? 'all';
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<string | null>(null);
 
@@ -39,9 +39,9 @@ export function Impellers() {
   return (
     <>
       <PageHero
-        eyebrow="Types of Impellers"
-        title="Mixing elements that set the flow pattern"
-        description="The impeller determines whether energy goes into circulation or into shear. Select by family, or search for the duty you need to solve."
+        eyebrow="COMPLETE IMPELLER RANGE"
+        title="All VOTIX impellers and mixing elements"
+        description="Browse the complete VOTIX impeller range, including every axial, radial, high-shear and viscous-duty mixing element. Filter by family or search for the duty you need to solve."
         crumbs={[{ label: 'Products', href: '/products' }, { label: 'Impellers' }]} />
       
 
@@ -80,7 +80,7 @@ export function Impellers() {
                     key={f.id}
                     type="button"
                     aria-pressed={family === f.id}
-                    onClick={() => setFamily(f.id)}
+                    onClick={() => setSearchParams(f.id === 'all' ? {} : { family: f.id })}
                     className={cn(
                       'min-h-[40px] rounded-full border px-4 text-sm font-semibold transition-[background-color,border-color,color] duration-200 ease-smooth',
                       family === f.id ?
@@ -104,7 +104,7 @@ export function Impellers() {
                 type="button"
                 disabled={!isDirty}
                 onClick={() => {
-                  setFamily('all');
+                  setSearchParams({});
                   setQuery('');
                 }}
                 className="inline-flex min-h-[40px] items-center gap-2 rounded-md px-3 text-sm font-semibold text-brand-600 transition-colors duration-200 ease-smooth hover:bg-brand-50 disabled:opacity-40">

@@ -8,7 +8,8 @@ import { ScrollShelf } from '../products/ScrollShelf';
 import { impellers } from '../../data/impellers';
 
 const rangeImageBySlug: Record<string, string> = {
-  hydrofoil: '/assets/Hydrofoil%20Impeller.png',
+  hydrofoil: '/assets/hydrofoil_new.png',
+  'hollow-blade-turbine': '/assets/impaleer_new.png',
   propeller: '/assets/Propeller%20Impeller.png',
   'pitched-blade-turbine': '/assets/Pitch%20Blade%20Impeller.png',
   'rushton-turbine': '/assets/Rushton%20Turbine%20Impeller.png',

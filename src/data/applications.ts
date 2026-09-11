@@ -62,7 +62,7 @@ export const applications: Application[] = [
   technology:
   'A rotor-stator element sized for the required droplet distribution, generally combined with wall scraping for heat control during the emulsification phase.',
   agitators: ['coaxial-agitator', 'high-shear-dissolver'],
-  impellers: ['rotor-stator', 'anchor-scraper'],
+  impellers: ['rotor-stator'],
   industries: ['cosmetics', 'pharmaceutical', 'food-beverage'],
   icon: 'Droplets'
 },
@@ -86,9 +86,9 @@ export const applications: Application[] = [
   challenge:
   'Product stagnating at the jacket wall forms an insulating boundary layer, slowing heating and cooling and risking local overheating of sensitive products.',
   technology:
-  'Flow directed along the vessel wall — by an axial impeller in low viscosity duty, or by an anchor with scrapers where the product is viscous.',
+  'Flow directed along the vessel wall by an axial impeller in low-viscosity duty or a wall-contact element where the product is viscous.',
   agitators: ['top-entry-agitator', 'coaxial-agitator', 'side-entry-agitator'],
-  impellers: ['anchor-scraper', 'hydrofoil', 'spiral-anchor'],
+  impellers: ['hydrofoil'],
   industries: ['dairy', 'cosmetics', 'chemical', 'biotech'],
   icon: 'Thermometer'
 },
@@ -125,9 +125,9 @@ export const applications: Application[] = [
   challenge:
   'In the laminar regime a conventional impeller carves a rotating cavern around itself while the rest of the batch stands still.',
   technology:
-  'Large-diameter wall-contact elements — anchors and helical ribbons — that mechanically move the whole batch, often paired with a high shear element.',
+  'Large-diameter wall-contact elements that mechanically move the whole batch, often paired with a high-shear element.',
   agitators: ['coaxial-agitator', 'custom-agitator', 'top-entry-agitator'],
-  impellers: ['spiral-anchor', 'anchor-scraper', 'dissolver-disc'],
+  impellers: ['dissolver-disc'],
   industries: ['cosmetics', 'food-beverage', 'chemical', 'pharmaceutical'],
   icon: 'Spline'
 }];

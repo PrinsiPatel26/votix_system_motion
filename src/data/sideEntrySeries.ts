@@ -28,7 +28,7 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'VTX-SE is the primary side-entry platform for general-purpose mixing where top entry is not practical. Engineered for large-volume blending, circulation, and uniform mixing across diverse industrial applications.',
     applications: ['Blending', 'Circulation', 'Maintaining Uniformity', 'Suspension', 'Sedimentation Prevention', 'Homogenization'],
     industries: ['Food & Beverage', 'Dairy', 'Process Liquids', 'Storage Tanks', 'Water / Process Applications'],
-    image: images.products.topEntry,
+    image: images.products.sideEntryStandard,
     gallery: [images.products.topEntry, images.impellers.propeller, images.impellers.hydrofoil, images.engineering.cfd],
     benefits: ['Reliable Circulation', 'Flexible Mounting', 'Compact Design', 'Easy Maintenance'],
     overview: [
@@ -47,8 +47,6 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: '0.37–30 kW' },
-      { label: 'Speed Range', value: '100–900 RPM' },
-      { label: 'Indicative Viscosity', value: '1–5,000 cP' },
       { label: 'Vessel Volume', value: '2,000 L–500,000 L+' },
       { label: 'Typical Impeller', value: 'Propeller' },
       { label: 'Typical Duties', value: 'Bulk blending; circulation; maintaining uniformity; storage-tank mixing' },
@@ -56,8 +54,6 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.37–30 kW' },
-      { label: 'Speed Range', value: '100–900 RPM' },
-      { label: 'Indicative Viscosity', value: '1–5,000 cP' },
       { label: 'Vessel Volume', value: '2,000 L–500,000 L+' },
       { label: 'Typical Impeller', value: 'Propeller' },
       { label: 'Typical Duties', value: 'Bulk blending; circulation; maintaining uniformity; storage-tank mixing' },
@@ -78,7 +74,7 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'VTX-SEH is engineered for high-volume circulation and continuous tank turnover in large storage and process tanks. Maintains concentration uniformity and prevents sedimentation with minimal energy input.',
     applications: ['Tank Turnover', 'Continuous Circulation', 'Concentration Uniformity', 'Sedimentation Prevention'],
     industries: ['Food & Beverage', 'Dairy', 'Juice', 'Process Water', 'Liquid Ingredients', 'Storage Tanks'],
-    image: images.products.topEntry,
+    image: images.products.sideEntryHighFlow,
     gallery: [images.products.topEntry, images.impellers.hydrofoil, images.engineering.design, images.industries.dairy],
     benefits: ['High-Volume Circulation', 'Energy Efficient', 'Prevents Settling', 'Large Tank Coverage'],
     overview: [
@@ -97,16 +93,12 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: '0.75–45 kW' },
-      { label: 'Speed', value: 'Application dependent' },
-      { label: 'Indicative Viscosity', value: '1–5,000 cP' },
       { label: 'Vessel Volume', value: '5,000 L–500,000 L+' },
       { label: 'Mixing Element', value: 'Side-mounted jet / high-flow circulation arrangement' },
       { label: 'Typical Duties', value: 'High-volume circulation; rapid turnover; large-tank blending' }
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.75–45 kW' },
-      { label: 'Speed Range', value: 'Application dependent' },
-      { label: 'Indicative Viscosity', value: '1–5,000 cP' },
       { label: 'Vessel Volume', value: '5,000 L–500,000 L+' },
       { label: 'Typical Impeller', value: 'Large-diameter axial-flow / hydrofoil-type impellers' },
       { label: 'Typical Duties', value: 'High-volume circulation; rapid turnover; large-tank blending' },
@@ -145,16 +137,12 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application specific' },
       { label: 'Vessel Volume', value: 'Available on request' },
       { label: 'Typical Impeller', value: 'Hydrofoil; High-Flow Axial Impeller; Pitched-Blade Turbine' },
       { label: 'Typical Duties', value: 'Solids suspension; sedimentation prevention; bottom-to-top circulation; concentration uniformity' }
     ],
     specificationTable: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application specific' },
       { label: 'Vessel Volume', value: 'Available on request' },
       { label: 'Typical Impeller', value: 'Hydrofoil; high-flow axial impeller; Pitched-Blade Turbine' },
       { label: 'Typical Duties', value: 'Solids suspension; sedimentation prevention; bottom-to-top circulation; concentration uniformity' },
@@ -175,8 +163,8 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'VTX-SB is optimized for uniform blending and product uniformity across large-volume storage and processing tanks. Engineered for low-to-medium viscosity liquid-liquid blending and temperature equalization.',
     applications: ['Liquid-Liquid Blending', 'Concentration Equalization', 'Temperature Equalization', 'Product Uniformity'],
     industries: ['Food & Beverage', 'Dairy', 'Liquid Storage', 'Batch Blending', 'Chemical Processing'],
-    image: images.products.topEntry,
-    gallery: [images.products.topEntry, images.impellers.propeller, images.impellers.hydrofoil, images.engineering.design],
+    image: images.products.sideEntryBlending,
+    gallery: [images.products.sideEntryBlending, images.products.sideEntryBlendingSecondary],
     benefits: ['Uniform Blending', 'Quick Mix Time', 'Temperature Control', 'Large Tank Coverage'],
     overview: [
       'VTX-SB is optimized for uniform blending and product uniformity across large-volume tanks.',
@@ -194,16 +182,12 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Low-to-medium viscosity' },
       { label: 'Vessel Volume', value: 'Available on request' },
       { label: 'Typical Impeller', value: 'Propeller; Hydrofoil; Pitched-Blade Impeller' },
       { label: 'Typical Duties', value: 'Liquid-liquid blending; concentration equalization; temperature equalization; product uniformity' }
     ],
     specificationTable: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Low-to-medium viscosity' },
       { label: 'Vessel Volume', value: 'Available on request' },
       { label: 'Typical Impeller', value: 'Propeller; Hydrofoil; Pitched-Blade Impeller' },
       { label: 'Typical Duties', value: 'Liquid-liquid blending; concentration equalization; temperature equalization; product uniformity' },
@@ -224,8 +208,8 @@ export const sideEntrySeries: SideEntrySeries[] = [
       'Custom side-entry agitation engineered around your specific process requirements, tank geometry, and mixing objectives. VOTIX engineering delivers process-optimized solutions for unique applications.',
     applications: ['Custom Process Requirements', 'Specialized Tank Geometry', 'Unique Mixing Objectives', 'Application-Specific Design'],
     industries: ['Food & Beverage', 'Dairy', 'Pharmaceutical', 'Chemical', 'Cosmetics', 'Water Treatment'],
-    image: images.products.topEntry,
-    gallery: [images.products.topEntry, images.engineering.cfd, images.engineering.design, images.about.engineering],
+    image: images.products.custom,
+    gallery: [images.products.custom, images.products.customSecondary],
     benefits: ['Process-Optimized', 'Custom Engineering', 'Flexible Design', 'Application-Specific'],
     overview: [
       'The side-entry system can be configured according to tank geometry, process duty, required circulation, and specific mixing requirements.',
@@ -243,16 +227,12 @@ export const sideEntrySeries: SideEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: '0.75–45 kW' },
-      { label: 'Speed Range', value: '50–500 RPM' },
-      { label: 'Indicative Viscosity', value: '1–10,000 cP' },
       { label: 'Vessel Volume', value: '2,000 L–500,000 L+' },
       { label: 'Typical Impeller', value: 'Hydrofoil' },
       { label: 'Typical Duties', value: 'Low-shear circulation; bulk blending; heat-transfer assistance; delicate-product mixing' }
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.75–45 kW' },
-      { label: 'Speed Range', value: '50–500 RPM' },
-      { label: 'Indicative Viscosity', value: '1–10,000 cP' },
       { label: 'Vessel Volume', value: '2,000 L–500,000 L+' },
       { label: 'Typical Impeller', value: 'Hydrofoil' },
       { label: 'Typical Duties', value: 'Low-shear circulation; bulk blending; heat-transfer assistance; delicate-product mixing' },

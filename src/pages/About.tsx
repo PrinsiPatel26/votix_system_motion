@@ -67,7 +67,7 @@ export function About() {
                 <SmartImage
                   src="/votix%20system%20motion.png"
                   alt="VOTIX Systems engineering facility"
-                  ratio="aspect-[4/3]"
+                  ratio="aspect-[16/9]"
                   className="rounded-2xl"
                 />
               </div>

@@ -57,12 +57,13 @@ export function Contact() {
                     <span className="block text-xs font-bold uppercase tracking-[0.1em] text-steel-500">
                       Email
                     </span>
-                    <a
-                      href={company.emailHref}
-                      className="mt-1 block break-all text-[15px] font-semibold text-navy hover:text-brand-600">
-                      
-                      {company.email}
-                    </a>
+                    <span className="mt-1 block">
+                      {company.emails.map((email) =>
+                        <a key={email} href={`mailto:${email}`} className="block break-all text-[15px] font-semibold text-navy hover:text-brand-600">
+                          {email}
+                        </a>
+                      )}
+                    </span>
                   </span>
                 </li>
                 <li className="flex gap-4">

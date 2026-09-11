@@ -6,8 +6,6 @@ export const productCategories: {id: ProductCategory | 'all';label: string;short
 { id: 'top-entry', label: 'Top Entry', short: 'Top Entry' },
 { id: 'side-entry', label: 'Side Entry', short: 'Side Entry' },
 { id: 'bottom-entry', label: 'Bottom Entry', short: 'Bottom Entry' },
-{ id: 'high-shear', label: 'High Shear / Dissolver', short: 'High Shear' },
-{ id: 'coaxial', label: 'Coaxial', short: 'Coaxial' },
 { id: 'custom', label: 'Custom Engineered', short: 'Custom' }];
 
 
@@ -282,7 +280,7 @@ export const products: Product[] = [
   'Documentation package aligned to project requirements'],
 
   image: images.products.custom,
-  gallery: [images.products.custom, images.engineering.cfd, images.about.manufacturing],
+  gallery: [images.products.custom, images.products.customSecondary],
   specifications: [
   { label: 'Scope', value: 'Application-specific, engineered to order' },
   { label: 'Materials', value: 'SS 304 / SS 316 / SS 316L / special alloys on request' },

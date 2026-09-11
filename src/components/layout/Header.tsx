@@ -12,8 +12,10 @@ import { cn } from '../../utils/cn';
 
 export function Header() {
   const headerRef = useRef<HTMLElement>(null);
+  const previousScrollY = useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [productsMenuStyle, setProductsMenuStyle] = useState<CSSProperties>({});
   const closeTimer = useRef<number>();
@@ -42,7 +44,21 @@ export function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - previousScrollY.current;
+
+      setScrolled(currentScrollY > 12);
+
+      if (currentScrollY === 0) {
+        setHeaderVisible(true);
+      } else if (Math.abs(scrollDelta) >= 8) {
+        setHeaderVisible(scrollDelta < 0);
+      }
+
+      previousScrollY.current = currentScrollY;
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -112,7 +128,8 @@ export function Header() {
       <header
         ref={headerRef}
         className={cn(
-          'fixed left-0 top-0 z-[90] w-full border-b border-white/10 bg-[#00193C] text-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-[background-color,backdrop-filter] duration-300',
+          'fixed left-0 top-0 z-[90] w-full border-b border-white/10 bg-[#00193C] text-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-[background-color,backdrop-filter,transform] duration-300 ease-in-out',
+          !headerVisible && '-translate-y-full',
           scrolled && 'bg-[#00142F]/95 backdrop-blur-md'
         )}>
         

@@ -42,7 +42,7 @@ export function ScrollShelf({ children, label }: ScrollShelfProps) {
         {children}
       </div>
 
-      <div className="mt-1 flex justify-end gap-2">
+      <div className="mt-1 flex w-full items-center justify-center gap-3">
         <button
           type="button"
           onClick={() => scrollBy(-1)}

@@ -37,7 +37,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
       </div>
 
       {images.length > 1 &&
-      <div className="scrollbar-slim mt-3 flex gap-3 overflow-x-auto pb-1" role="group" aria-label={`${name} gallery thumbnails`}>
+      <div className="scrollbar-slim mt-3 flex snap-x gap-3 overflow-x-auto pb-1" role="group" aria-label={`${name} gallery thumbnails`}>
           {images.map((src, i) =>
         <button
           key={src + i}
@@ -45,9 +45,10 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           onClick={() => setActive(i)}
           aria-label={`Show ${name} view ${i + 1}`}
           aria-pressed={i === active}
+          style={{ flex: '0 0 calc((100% - 0.75rem) / 2)' }}
           className={cn(
-            'w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors duration-200 ease-smooth sm:w-24',
-            i === active ? 'border-accent' : 'border-steel-100 hover:border-brand-200'
+            'snap-start overflow-hidden rounded-lg border-2 transition-colors duration-200 ease-smooth',
+            i === active ? 'border-[#F47A00]' : 'border-steel-100 hover:border-brand-200'
           )}>
           
               <SmartImage src={src} alt="" ratio="aspect-square" imgClassName="object-contain" objectFit="contain" />

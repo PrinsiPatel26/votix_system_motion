@@ -8,6 +8,7 @@ import { PageHero } from '../components/layout/PageHero';
 import { QuoteCTA } from '../components/home/QuoteCTA';
 import { ProductImageSlider } from '../components/ui/ProductImageSlider';
 import { SmartImage } from '../components/ui/SmartImage';
+import { images } from '../data/images';
 import { getSideEntrySeries } from '../data/sideEntrySeries';
 import { getImpeller } from '../data/impellers';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -38,7 +39,8 @@ export function SideEntrySeriesDetail() {
     'vtx-se-standard': ['/assets/VTX SE SERIES.png', '/assets/VTX SE SERIES - 1.png'],
     'vtx-seh-high-flow': ['/assets/VTX SEH SERIES.png', '/assets/VTX SEH SERIES-1.png'],
     'vtx-sus-suspension': ['/assets/VTX SB SERIES.png', '/assets/VTX SB SERIES-1.png'],
-    'vtx-sb-blending': ['/assets/VTX SB SERIES.png', '/assets/VTX SB SERIES-1.png']
+    'vtx-sb-blending': [images.products.sideEntryBlending, images.products.sideEntryBlendingSecondary],
+    custom: [images.products.custom, images.products.customSecondary]
   };
 
   const productSliderImages = seriesSliderMap[slug ?? ''] ?? [series.image, series.image];

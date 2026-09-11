@@ -6,6 +6,9 @@ import { QuoteProvider } from './contexts/QuoteContext';
 import { Home } from './pages/Home';
 
 const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m.Products })));
+const AgitatorRange = lazy(() =>
+  import('./pages/AgitatorRange').then((m) => ({ default: m.AgitatorRange }))
+);
 const ProductDetail = lazy(() =>
 import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail }))
 );
@@ -84,6 +87,7 @@ function AnimatedRoutes() {
           <Routes location={location}>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="/agitators" element={<AgitatorRange />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/impellers" element={<Impellers />} />
               <Route path="/products/impellers/:slug" element={<ImpellerDetail />} />

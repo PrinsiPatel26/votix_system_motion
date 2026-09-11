@@ -8,6 +8,7 @@ import { PageHero } from '../components/layout/PageHero';
 import { QuoteCTA } from '../components/home/QuoteCTA';
 import { ProductImageSlider } from '../components/ui/ProductImageSlider';
 import { SmartImage } from '../components/ui/SmartImage';
+import { images } from '../data/images';
 import { getBottomEntrySeries } from '../data/bottomEntrySeries';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { NotFound } from './NotFound';
@@ -34,9 +35,9 @@ export function BottomEntrySeriesDetail() {
   ];
 
   const seriesSliderMap: Record<string, string[]> = {
-    'vtx-be-standard': ['/assets/VTX A SERIES.png', '/assets/VTX A SERIES -1.png'],
+    'vtx-be-standard': [images.products.bottomEntry, images.products.bottomEntrySecondary],
     'vtx-bu-u-impeller': ['/assets/VTX BU SERIES.png', '/assets/VTX BU SERIES-1.png'],
-    'vtx-beh-high-shear': ['/assets/VTX BH SERIES (1).png', '/assets/VTX BH SERIES - 1.png'],
+    'vtx-beh-high-shear': [images.products.bottomEntryHighShear, images.products.bottomEntryHighShearSecondary],
     'vtx-bh-hygienic': ['/assets/VTX BH SERIES (1).png', '/assets/VTX BH SERIES - 1.png'],
     'vtx-bm-multi-agitator': ['/assets/VTX BH SERIES (1).png', '/assets/VTX BH SERIES - 1.png']
   };

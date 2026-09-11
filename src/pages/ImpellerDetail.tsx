@@ -192,56 +192,16 @@ const impellerTemplates = {
       { label: 'Process focus', value: 'Wall movement and thermal distribution' }
     ]
   },
-  'anchor-scraper': {
-    summary: 'A wide anchor frame optionally fitted with PTFE scrapers, keeping product moving along the wall while scraping deposits for effective heating, cooling and improved thermal uniformity in viscous batches.',
-    overview: 'Anchor + Scraper impellers combine wall-following tangential mixing with mechanical scraping. The scraper blades prevent product buildup on the vessel wall, improving heat transfer efficiency and maintaining product homogeneity in high-viscosity applications.',
-    flowType: 'Tangential + wall scraping',
-    typicalDuties: ['High-viscosity mixing', 'Improved wall heat transfer'],
-    benefits: ['Wall scraping action', 'Enhanced heat transfer', 'Deposit prevention', 'Thermal uniformity'],
-    applications: ['Viscous mixing', 'Heat transfer', 'Creams & pastes', 'High-viscosity batches'],
-    design: [
-      'Wide anchor frame with integrated scraper blades',
-      'PTFE scrapers prevent wall deposits and maintain heat contact',
-      'Tangential circulation combined with mechanical scraping',
-      'Optimized for thermal management in viscous duty'
-    ],
-    technical: [
-      { label: 'Flow pattern', value: 'Tangential + wall scraping' },
-      { label: 'Typical duty', value: 'High-viscosity mixing; improved wall heat transfer' },
-      { label: 'Best suited to', value: 'High viscosity products (5,000–500,000 cP)' },
-      { label: 'Process focus', value: 'Wall scraping and enhanced heat transfer' }
-    ]
-  },
-  'spiral-anchor': {
-    summary: 'Helical ribbons move product axially along the wall and back down the centre, achieving genuine bulk turnover in media where conventional impellers only cavitate.',
-    overview: 'Spiral Anchor / Helical Ribbon impellers deliver controlled circulation for very high-viscosity products. The helical design creates top-to-bottom axial movement along the vessel wall and back through the center, providing effective mixing without cavitation in extremely viscous media.',
-    flowType: 'Viscous circulation',
-    typicalDuties: ['High-viscosity mixing', 'Controlled circulation'],
-    benefits: ['Viscous product handling', 'Controlled circulation', 'No cavitation', 'Top-to-bottom movement'],
-    applications: ['Very viscous mixing', 'Gels & pastes', 'Homogeneity', 'Extreme viscosity duty'],
-    design: [
-      'Helical ribbon geometry for axial product movement',
-      'Wall-contact design for uniform mixing',
-      'Avoids cavitation in very high-viscosity media',
-      'Gentle, controlled circulation pattern'
-    ],
-    technical: [
-      { label: 'Flow pattern', value: 'Viscous circulation' },
-      { label: 'Typical duty', value: 'Controlled circulation in very high-viscosity products' },
-      { label: 'Best suited to', value: 'Very high viscosity products (>500,000 cP)' },
-      { label: 'Process focus', value: 'Gentle, thorough mixing without cavitation' }
-    ]
-  },
   'high-speed-impeller': {
     summary: 'Engineered high-speed element designed for the inner shaft of a coaxial / dual-shaft agitator. Provides localized shear and fast mixing while the outer shaft handles bulk circulation and heat transfer.',
-    overview: 'High-Speed Impeller elements are engineered as the inner shaft component in a coaxial / dual-shaft agitator system. Working in tandem with an outer slow-speed element (typically an Anchor or Anchor + Scraper), the high-speed impeller provides localized shear, dispersion, and fast mixing within the controlled bulk circulation environment. This dual-action approach is ideal for complex formulations requiring independent control of circulation and shear.',
+    overview: 'High-Speed Impeller elements are engineered as the inner shaft component in a coaxial / dual-shaft agitator system. Working in tandem with an outer slow-speed wall-contact element, the high-speed impeller provides localized shear, dispersion, and fast mixing within the controlled bulk circulation environment. This dual-action approach is ideal for complex formulations requiring independent control of circulation and shear.',
     flowType: 'High-speed inner shaft mixing (coaxial systems)',
     typicalDuties: ['Inner shaft high-speed mixing', 'Localized dispersion', 'Complex formulation processing'],
     benefits: ['Engineered for dual-shaft systems', 'Independent shear control', 'Localized mixing intensity', 'Formulation flexibility'],
     applications: ['Complex formulations', 'Emulsions', 'Creams', 'Lotions', 'Ointments', 'Specialty high-viscosity mixing'],
     design: [
       'Engineered high-speed element for coaxial inner shaft',
-      'Designed to work with outer slow-speed element (Anchor / Scraper)',
+      'Designed to work with an outer slow-speed wall-contact element',
       'Provides localized shear without disrupting bulk circulation',
       'Geometry engineered according to process requirements'
     ],
@@ -249,7 +209,7 @@ const impellerTemplates = {
       { label: 'System type', value: 'Coaxial / dual-shaft agitator' },
       { label: 'Shaft position', value: 'Inner fast-speed shaft' },
       { label: 'Typical duty', value: 'Complex formulations; emulsions; creams; controlled shear applications' },
-      { label: 'Typical outer element', value: 'Anchor or Anchor + Scraper (slow-speed outer shaft)' }
+      { label: 'Typical outer element', value: 'Slow-speed wall-contact element' }
     ]
   }
 } as const;

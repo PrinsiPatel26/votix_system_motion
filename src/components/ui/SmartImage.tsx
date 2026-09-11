@@ -24,7 +24,7 @@ export function SmartImage({
   imgClassName,
   ratio = 'aspect-[4/3]',
   priority = false,
-  objectFit = 'cover'
+  objectFit = 'contain'
 }: SmartImageProps) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);

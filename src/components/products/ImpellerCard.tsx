@@ -19,7 +19,7 @@ interface ImpellerCardProps {
 export function ImpellerCard({
   impeller,
   imageSrc,
-  imageObjectFit = 'cover',
+  imageObjectFit = 'contain',
   variant = 'grid',
   expanded = false,
   onToggle
@@ -41,7 +41,7 @@ export function ImpellerCard({
           <SmartImage
             src={imageSrc ?? impeller.image}
             alt={`${impeller.name} impeller`}
-            ratio="aspect-square"
+            ratio="aspect-[4/3]"
             objectFit={imageObjectFit}
             imgClassName="transition-transform duration-300 ease-smooth group-hover:scale-[1.04]" />
         </div>

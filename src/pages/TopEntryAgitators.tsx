@@ -47,6 +47,8 @@ export function TopEntryAgitators() {
                     src={series.image}
                     alt={series.name}
                     ratio="aspect-[4/3]"
+                    objectFit="contain"
+                    className="p-3"
                     imgClassName="transition-transform duration-300 ease-smooth group-hover:scale-[1.03]" />
                   <span className="absolute left-3 top-3">
                     <Badge tone="navy">{series.name}</Badge>

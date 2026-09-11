@@ -29,7 +29,7 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     applications: ['Liquid Blending', 'Homogenization', 'Suspension', 'Recirculation', 'Heat Transfer'],
     industries: ['Pharmaceutical', 'Food & Beverage', 'Dairy', 'Cosmetics', 'Biotechnology', 'Specialty Process'],
     image: images.products.bottomEntry,
-    gallery: [images.products.bottomEntry, images.impellers.hydrofoil, images.impellers.propeller, images.engineering.cfd],
+    gallery: [images.products.bottomEntry, images.products.bottomEntrySecondary],
     benefits: ['Efficient low-level mixing', 'Compact shaft arrangement', 'Clear tank top', 'Low headroom friendly'],
     overview: [
       'VTX-BE is the primary Bottom Entry platform for efficient circulation from the lower process zone.',
@@ -47,8 +47,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'Hydrofoil; Propeller; Pitched-Blade Turbine; Specialized axial-flow impellers' },
       { label: 'Typical Duties', value: 'Liquid blending; homogenization; suspension; recirculation; heat-transfer assistance' },
@@ -56,8 +54,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.37-30 kW' },
-      { label: 'Speed Range', value: '50-1,000 RPM' },
-      { label: 'Indicative Viscosity', value: '1-20,000 cP' },
       { label: 'Vessel Volume', value: '100 L-50,000 L' },
       { label: 'Typical Impellers', value: 'Propeller; Hydrofoil; Pitched-Blade Turbine' },
       { label: 'Typical Duties', value: 'Blending; homogenization; suspension; recirculation; heat-transfer assistance' }
@@ -78,7 +74,7 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
       'VTX-BU uses a bottom-driven U-shaped impeller in the lower mixing zone to create strong circulation in demanding, viscous and process-sensitive applications.',
     applications: ['Blending', 'Homogenization', 'Suspension', 'Dissolution', 'Viscous-product circulation', 'Heat-transfer assistance'],
     industries: ['Food & Beverage', 'Dairy', 'Pharmaceutical', 'Cosmetics', 'Specialty Process'],
-    image: images.products.bottomEntry,
+    image: images.products.bottomEntryUImpeller,
     gallery: [images.products.bottomEntry, images.impellers.anchor, images.impellers.hydrofoil, images.engineering.design],
     benefits: ['Strong lower-zone circulation', 'Viscous product handling', 'Compact bottom drive', 'Process-tuned mixing'],
     overview: [
@@ -97,8 +93,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'U-Shaped Impeller / U-Profile Impeller' },
       { label: 'Typical Duties', value: 'Blending; homogenization; suspension; dissolution; viscous-product circulation; heat-transfer assistance' },
@@ -106,8 +100,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.75-45 kW' },
-      { label: 'Speed Range', value: '10-120 RPM' },
-      { label: 'Indicative Viscosity', value: '5,000-300,000 cP' },
       { label: 'Vessel Volume', value: '100 L-30,000 L' },
       { label: 'Impeller', value: 'Two large L-shaped blades forming a U-shaped profile' },
       { label: 'Typical Duties', value: 'Viscous-product circulation; blending; homogenization; heat-transfer assistance' },
@@ -126,8 +118,8 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
       'VTX-BEH is a high-energy Bottom Entry arrangement designed for emulsification, dispersion and homogenization where the process requires intense local shear from the lower vessel zone.',
     applications: ['Emulsification', 'Dispersion', 'Homogenization', 'Powder Incorporation', 'Rapid Mixing'],
     industries: ['Pharmaceutical formulations', 'Cosmetics', 'Food emulsions', 'Specialty processing'],
-    image: images.products.highShear,
-    gallery: [images.products.highShear, images.impellers.rotorStator, images.impellers.dissolverDisc, images.engineering.design],
+    image: images.products.bottomEntryHighShear,
+    gallery: [images.products.bottomEntryHighShear, images.products.bottomEntryHighShearSecondary],
     benefits: ['High-energy mixing', 'Strong local shear', 'Rapid dispersion', 'Process-specific design'],
     overview: [
       'VTX-BEH is an engineered high-shear Bottom Entry arrangement designed to deliver strong local shear from the heart of the vessel.',
@@ -145,8 +137,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'High-speed impeller; Dissolver; Rotor-Stator / high-shear element; Application-specific turbine' },
       { label: 'Typical Duties', value: 'Emulsification; dispersion; homogenization; powder incorporation; rapid mixing' },
@@ -154,8 +144,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: '1.5-75 kW' },
-      { label: 'Speed Range', value: '500-6,000 RPM, depending on mixing head' },
-      { label: 'Indicative Viscosity', value: '1-50,000 cP, application dependent' },
       { label: 'Vessel Volume', value: '50 L-20,000 L' },
       { label: 'Typical Mixing Elements', value: 'Rotor-Stator; high-shear head; dissolver arrangement' },
       { label: 'Typical Duties', value: 'Emulsification; dispersion; homogenization; rapid mixing' }
@@ -176,7 +164,7 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
       'VTX-BH is a hygienic Bottom Entry configuration engineered for sensitive processes where sanitary design, cleanability and controlled agitation are critical.',
     applications: ['Hygienic Mixing', 'Cleanability-focused processing', 'Controlled agitation'],
     industries: ['Pharmaceutical', 'Dairy', 'Food', 'Beverage', 'Cosmetics', 'Biotechnology'],
-    image: images.products.bottomEntry,
+    image: images.products.bottomEntryHygienic,
     gallery: [images.products.bottomEntry, images.impellers.hydrofoil, images.industries.pharmaceutical, images.engineering.design],
     benefits: ['Controlled hygienic agitation', 'Cleanability-conscious design', 'Sensitive process suitability', 'Compact bottom-entry layout'],
     overview: [
@@ -195,8 +183,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'Process-specific hygienic impeller selection' },
       { label: 'Typical Duties', value: 'Hygienic mixing; cleanability-focused processing; controlled agitation' },
@@ -204,8 +190,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: '0.37-30 kW' },
-      { label: 'Speed Range', value: '50-1,000 RPM' },
-      { label: 'Indicative Viscosity', value: '1-20,000 cP' },
       { label: 'Vessel Volume', value: '100 L-30,000 L' },
       { label: 'Typical Materials', value: 'SS316L product-contact construction; SS304 / SS316 depending on application' },
       { label: 'Important Parameters', value: 'Surface finish; seal configuration; cleanability; drainability; product-contact material' },
@@ -243,8 +227,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     technical: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'Multiple impeller combinations engineered for the process' },
       { label: 'Typical Duties', value: 'Complex mixing; large vessels; multi-stage processes' },
@@ -252,8 +234,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
     ],
     specificationTable: [
       { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Speed Range', value: 'Engineered to requirement' },
-      { label: 'Indicative Viscosity', value: 'Application dependent' },
       { label: 'Vessel Volume', value: 'Engineered to requirement' },
       { label: 'Typical Impeller', value: 'Multiple impeller combinations engineered for the process' },
       { label: 'Typical Duties', value: 'Complex mixing; large vessels; multi-stage processes' },

@@ -4,6 +4,7 @@ import { Phone } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { ScrollToTop } from './ScrollToTop';
+import { company } from '../../data/navigation';
 
 export function Layout() {
   return (
@@ -17,7 +18,7 @@ export function Layout() {
 
       <div className="fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-2.5 sm:bottom-6 sm:right-6">
         <a
-          href="https://wa.me/919825000000"
+          href="https://wa.me/919974995554"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="WhatsApp Us"
@@ -33,7 +34,7 @@ export function Layout() {
         </a>
 
         <a
-          href="tel:+919825000000"
+          href={company.phoneHref}
           aria-label="Call Us"
           className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-lg shadow-slate-200/60 transition-transform duration-200 ease-smooth hover:-translate-y-0.5 hover:shadow-xl sm:h-12 sm:w-12">
           <Phone className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />

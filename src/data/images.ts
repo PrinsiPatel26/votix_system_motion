@@ -9,33 +9,51 @@ export const images = {
 
   },
   products: {
-    topEntry: "/da2e330c-2f15-4223-970f-08c4b6050019.jpg",
+    topEntry: "/assets/VTX%20G%20SERIES.png",
+    topEntrySeries: "/assets/VTX%20G%20SERIES%20-%201.png",
+    topEntryAnchorSeries: "/assets/VTX%20A%20SERIES%20-1.png",
+    topEntryCoaxialSeries: "/assets/VTX%20CX%20SERIES%20-%201.png",
+    topEntryHighShearSeries: "/assets/VTX%20HS%20SERIES%20-1.png",
+    topEntryJetMixerSeries: "/assets/VTX%20JM%20SERIES-1.png",
+    topEntryFermenterSeries: "/assets/VTX%20FB%20SERIES-1.png",
 
-    sideEntry: "/91acfdf2-77cf-4016-9b21-a2bc821ca849.jpg",
+    sideEntry: "/assets/VTX%20SE%20SERIES.png",
+    sideEntryStandard: "/assets/VTX%20SE%20SERIES%20-%201.png",
+    sideEntryHighFlow: "/assets/VTX%20SEH%20SERIES-1.png",
+    sideEntryBlending: "/assets/vtx_sb_1.png",
+    sideEntryBlendingSecondary: "/assets/vtx_sb_2.png",
 
-    bottomEntry: "/370c1b69-3512-44d2-8d0d-d621ea26d87f.jpg",
+    bottomEntry: "/assets/vtx_be_1.png",
+    bottomEntrySecondary: "/assets/vtx_be_2.png",
+    bottomEntryUImpeller: "/assets/VTX%20BU%20SERIES-1.png",
+    bottomEntryHighShear: "/assets/beh_1.png",
+    bottomEntryHighShearSecondary: "/assets/beh_2.png",
+    bottomEntryHygienic: "/assets/VTX%20BH%20SERIES%20-%201.png",
 
     highShear: "/ba914533-7dfb-40aa-8eea-88c97c8b8d11.jpg",
 
     coaxial: "/73c391cb-9292-47d0-b9ee-3e9e0fa6c0bc.jpg",
 
-    custom: "/641a6575-4cbd-4ec2-8392-7748bd756f8c.jpg"
+    custom: "/assets/custom1_new.png",
+    customSecondary: "/assets/custom2_new.png"
 
   },
   impellers: {
-    hydrofoil: "/52d8166b-da89-4f85-aaae-09c770be5f21.jpg",
+    hydrofoil: "/assets/hydrofoil_new.png",
 
-    propeller: "/6f0f55ef-47af-4f7c-ac36-f740ed9bc787.jpg",
+    hollowBlade: "/assets/impaleer_new.png",
 
-    anchor: "/64288ccc-e59c-4d7e-84cb-a91858e832fe.jpg",
+    propeller: "/assets/Propeller%20Impeller.png",
 
-    pitchedBlade: "/3ffbc316-2193-4c5c-8fcf-72dc0187bb11.jpg",
+    anchor: "/assets/ANCHOR%20IMPELLER.png",
 
-    rushton: "/87c0bd7d-fd41-48c6-93b4-5b0543001b67.jpg",
+    pitchedBlade: "/assets/Pitch%20Blade%20Impeller.png",
+
+    rushton: "/assets/Rushton%20Turbine%20Impeller.png",
 
     rotorStator: "/23d391c7-e833-4681-ad3d-4adddb595874.jpg",
 
-    dissolverDisc: "/9ad731db-8796-4f74-9b62-c00a65449a2a.jpg",
+    dissolverDisc: "/assets/Dissolver%20disc.png",
 
     spiralAnchor: "/3f5e4701-a1b8-4135-aa31-d85ec2883b94.jpg"
 

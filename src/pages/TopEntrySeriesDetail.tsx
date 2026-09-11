@@ -35,6 +35,7 @@ export function TopEntrySeriesDetail() {
 
   const seriesSliderMap: Record<string, string[]> = {
     'vtx-g-series': ['/assets/VTX G SERIES.png', '/assets/VTX G SERIES - 1.png'],
+    'vtx-a-series': ['/assets/VTX A SERIES.png', '/assets/VTX A SERIES -1.png'],
     'vtx-cx-series': ['/assets/VTX CX SERIES.png', '/assets/VTX CX SERIES - 1.png'],
     'vtx-hs-series': ['/assets/VTX HS series.png', '/assets/VTX HS SERIES -1.png'],
     'vtx-jm-series': ['/assets/VTX JM SERIES.png', '/assets/VTX JM SERIES-1.png'],

@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CheckIcon,
-  LinkedinIcon,
   MailIcon,
   MapPinIcon,
   PhoneIcon,
-  SendIcon,
-  YoutubeIcon } from
+  SendIcon } from
 'lucide-react';
 import { Container } from '../ui/Container';
 import { Logo } from '../ui/Logo';
 import { company } from '../../data/navigation';
 import { industries } from '../../data/industries';
-import { products } from '../../data/products';
 import { applications } from '../../data/applications';
 import { EMAIL_RE } from '../../utils/validation';
+
+const footerProductLinks = [
+  { label: 'All Agitators', href: '/agitators' },
+  { label: 'Top Entry', href: '/products/top-entry-agitator' },
+  { label: 'Side Entry', href: '/products/side-entry-agitator' },
+  { label: 'Bottom Entry', href: '/products/bottom-entry-agitator' },
+  { label: 'High Shear', href: '/products/high-shear-dissolver' },
+  { label: 'Coaxial', href: '/products/coaxial-agitator' },
+  { label: 'Custom Engineered', href: '/products/custom-agitator' },
+  { label: 'Custom Impellers', href: '/products/impellers' },
+  { label: 'All Impeller Range', href: '/products/impellers' },
+  { label: 'Hydrofoil & Propeller', href: '/products/impellers?family=axial' },
+  { label: 'Rushton & Radial', href: '/products/impellers?family=radial' },
+  { label: 'High Shear Elements', href: '/products/impellers?family=high-shear' },
+  { label: 'Viscous / Wall Contact', href: '/products/impellers?family=viscous' },
+  { label: 'Axial Flow', href: '/products/impellers?family=axial' }
+];
 
 const quickLinks = [
 { label: 'Products', href: '/products' },
@@ -73,31 +87,15 @@ export function Footer() {
               </li>
               <li className="flex gap-3">
                 <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <a href={company.emailHref} className="break-all text-steel-200 hover:text-white">
-                  {company.email}
-                </a>
+                <span className="flex flex-col gap-1">
+                  {company.emails.map((email) =>
+                    <a key={email} href={`mailto:${email}`} className="break-all text-steel-200 hover:text-white">
+                      {email}
+                    </a>
+                  )}
+                </span>
               </li>
             </ul>
-            <div className="mt-6 flex gap-2">
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="VOTIX Systems on LinkedIn"
-                className="flex h-11 w-11 items-center justify-center rounded-md border border-white/15 text-steel-200 transition-colors duration-150 ease-smooth hover:border-accent hover:text-accent">
-                
-                <LinkedinIcon className="h-5 w-5" aria-hidden />
-              </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="VOTIX Systems on YouTube"
-                className="flex h-11 w-11 items-center justify-center rounded-md border border-white/15 text-steel-200 transition-colors duration-150 ease-smooth hover:border-accent hover:text-accent">
-                
-                <YoutubeIcon className="h-5 w-5" aria-hidden />
-              </a>
-            </div>
           </div>
 
           <nav className="lg:col-span-2" aria-label="Quick links">
@@ -120,24 +118,16 @@ export function Footer() {
               Products
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {products.map((p) =>
-              <li key={p.slug}>
+              {footerProductLinks.map((product) =>
+              <li key={`${product.label}-${product.href}`}>
                   <Link
-                  to={`/products/${p.slug}`}
+                  to={product.href}
                   className="text-steel-200 transition-colors duration-150 ease-smooth hover:text-accent">
                   
-                    {p.shortName}
+                    {product.label}
                   </Link>
                 </li>
               )}
-              <li>
-                <Link
-                  to="/products/impellers"
-                  className="text-steel-200 transition-colors duration-150 ease-smooth hover:text-accent">
-                  
-                  Impellers
-                </Link>
-              </li>
             </ul>
           </nav>
 

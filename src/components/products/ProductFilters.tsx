@@ -53,7 +53,7 @@ export function ProductFilters({ value, onChange, resultCount }: ProductFiltersP
               type="search"
               value={value.query}
               onChange={(e) => set('query', e.target.value)}
-              placeholder="e.g. side entry, dissolver, coaxial"
+              placeholder="e.g. side entry, top entry, bottom entry"
               className="min-h-[44px] w-full rounded-md border border-steel-200 bg-white py-2.5 pl-10 pr-3.5 text-[15px] text-navy placeholder:text-steel-400 focus:border-brand focus:outline-none" />
             
           </div>

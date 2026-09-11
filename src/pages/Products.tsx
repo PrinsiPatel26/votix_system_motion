@@ -15,10 +15,14 @@ import { products } from '../data/products';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { EASE_SMOOTH } from '../utils/motion';
 
+const publicProducts = products.filter(
+  (product) => product.category !== 'high-shear' && product.category !== 'coaxial'
+);
+
 export function Products() {
   usePageMeta(
     'VOTIX Systems | Industrial Agitators & Mixing Equipment',
-    'Browse the VOTIX agitator range: top entry, side entry, bottom entry, high shear, coaxial and custom engineered mixing systems, filterable by industry and application.'
+    'Browse the VOTIX agitator range: top entry, side entry and bottom entry systems, with custom engineered solutions for specialised applications.'
   );
 
   const [searchParams] = useSearchParams();
@@ -30,7 +34,7 @@ export function Products() {
 
   const results = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
-    return products.filter((p) => {
+    return publicProducts.filter((p) => {
       if (filters.category !== 'all' && p.category !== filters.category) return false;
       if (filters.industry !== 'all' && !p.industries.includes(filters.industry)) return false;
       if (filters.application !== 'all' && !p.applications.includes(filters.application))
@@ -103,7 +107,7 @@ export function Products() {
                 Looking for mixing elements?
               </h2>
               <p className="mt-1 text-sm text-steel-600">
-                Hydrofoil, propeller, turbine, anchor, helical and high shear geometries.
+                Hydrofoil, propeller, turbine, anchor and helical geometries.
               </p>
             </div>
             <Link

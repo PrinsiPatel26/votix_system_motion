@@ -116,29 +116,16 @@ export const impellers: Impeller[] = [
   },
   {
     id: 'imp-09',
-    slug: 'anchor-scraper',
-    name: 'Anchor + Scraper',
-    family: 'viscous',
-    familyLabel: 'Viscous / Wall Contact',
-    purpose: 'Wall heat transfer with scraping in viscous products',
+    slug: 'hollow-blade-turbine',
+    name: 'Hollow Blade Turbine',
+    family: 'radial',
+    familyLabel: 'Radial Flow',
+    purpose: 'High-intensity radial flow and gas dispersion',
     description:
-      'A wide anchor frame optionally fitted with PTFE scrapers, keeping product moving along the wall while scraping deposits for effective heating, cooling and improved thermal uniformity in viscous batches.',
-    suitableFor: ['Viscous mixing', 'Heat transfer', 'Creams & pastes'],
-    viscosity: 'High',
-    image: images.impellers.anchor
-  },
-  {
-    id: 'imp-10',
-    slug: 'spiral-anchor',
-    name: 'Spiral Anchor / Helical Ribbon',
-    family: 'viscous',
-    familyLabel: 'Viscous / Wall Contact',
-    purpose: 'Top-to-bottom turnover of very viscous media',
-    description:
-      'Helical ribbons move product axially along the wall and back down the centre, achieving genuine bulk turnover in media where conventional impellers only cavitate.',
-    suitableFor: ['Very viscous mixing', 'Gels & pastes', 'Homogeneity'],
-    viscosity: 'Very high',
-    image: images.impellers.spiralAnchor
+      'A hollow-blade disc turbine designed to create strong radial discharge and controlled turbulence for gas dispersion, blending and demanding process duties.',
+    suitableFor: ['Gas dispersion', 'Blending', 'Reaction vessels'],
+    viscosity: 'Low to medium',
+    image: images.impellers.hollowBlade
   },
   {
     id: 'imp-11',
