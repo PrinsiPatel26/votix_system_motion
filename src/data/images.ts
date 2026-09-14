@@ -46,7 +46,7 @@ export const images = {
 
     rushton: "/assets/Rushton%20Turbine%20Impeller.png",
 
-    rotorStator: "/assets/high%20shaer+new_1.png",
+    rotorStator: "/assets/high%20shaer%20new_1.png",
 
     dissolverDisc: "/assets/Dissolver%20disc.png",
 
