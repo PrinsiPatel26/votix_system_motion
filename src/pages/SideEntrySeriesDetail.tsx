@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Container } from '../components/ui/Container';
@@ -48,7 +48,7 @@ export function SideEntrySeriesDetail() {
 
   const productSliderImages = seriesSliderMap[slug ?? ''] ?? [series.image, series.image];
 
-  const overviewTabs = useMemo(() => ({
+  const overviewTabs = {
     Overview: (
       <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
         <div>
@@ -139,7 +139,7 @@ export function SideEntrySeriesDetail() {
         ))}
       </div>
     )
-  }));
+  };
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { images } from './images';
-import type { CaseStudy, FaqItem, Resource } from '../types';
+import type { FaqItem, Resource } from '../types';
 
 export const resources: Resource[] = [
 {
@@ -12,7 +12,7 @@ export const resources: Resource[] = [
   image: images.products.topEntry,
   keywords: ['agitator', 'product range', 'mixing systems', 'brochure'],
   featured: true,
-  content: ['Explore the VOTIX range of top entry, side entry, bottom entry, high-shear and coaxial agitators.', 'Use this overview as a starting point for selecting the right mixing architecture for your vessel and process.']
+  content: ['Explore the VOTIX range of top entry, side entry, bottom entry and custom-engineered agitators.', 'Use this overview as a starting point for selecting the right mixing architecture for your vessel and process.']
 },
 {
   id: 'r-02',
@@ -215,17 +215,6 @@ export const resources: Resource[] = [
   content: ['This reference describes a simulation-led comparison method without claiming customer results or project outcomes.']
 },
 {
-  id: 'r-20',
-  slug: 'coaxial-mixing-systems-explained',
-  title: 'Coaxial Mixing Systems Explained',
-  type: 'Video',
-  description: 'A walkthrough of how a slow outer frame and inner high-shear element work together in a coaxial system.',
-  date: '2024-11-15',
-  image: images.products.coaxial,
-  keywords: ['video', 'coaxial', 'high shear', 'viscous mixing'],
-  content: ['See how independently driven elements can address demanding viscous and high-shear process requirements.']
-},
-{
   id: 'r-21',
   slug: 'votix-mixing-test-facility',
   title: 'VOTIX Mixing Test Facility',
@@ -237,45 +226,6 @@ export const resources: Resource[] = [
   content: ['Pilot-scale testing can help teams compare configurations and build confidence before moving to production equipment.']
 },
 ] as Resource[];
-
-
-export const caseStudies: CaseStudy[] = [
-{
-  id: 'cs-01',
-  slug: 'dairy-fermentation-vessel',
-  title: 'Uniform fermentation across a 30 m³ yoghurt vessel',
-  industry: 'Dairy',
-  application: 'Blending & heat transfer',
-  solution:
-  'Two-stage hydrofoil arrangement on a top entry drive, positioned for full turnover at partial fill levels.',
-  result: 'More consistent texture between batches and shorter temperature equalisation phases.',
-  image: images.resources.caseDairy,
-  placeholder: true
-},
-{
-  id: 'cs-02',
-  slug: 'specialty-chemical-reactor',
-  title: 'Retrofit agitator for an existing chemical reactor',
-  industry: 'Chemical',
-  application: 'Suspension & reaction',
-  solution:
-  'Custom shaft and impeller stack engineered to the existing flange and vessel internals, with an upgraded double mechanical seal.',
-  result: 'Sediment build-up eliminated without modifying the vessel or its support structure.',
-  image: images.resources.caseChemical,
-  placeholder: true
-},
-{
-  id: 'cs-03',
-  slug: 'cosmetic-cream-line',
-  title: 'Coaxial system for a cosmetic cream line',
-  industry: 'Cosmetics',
-  application: 'Emulsification',
-  solution:
-  'Anchor scraper frame combined with an independently driven rotor-stator head under vacuum operation.',
-  result: 'Finer, more stable emulsion with visibly reduced air entrainment in the finished product.',
-  image: images.resources.caseCosmetics,
-  placeholder: true
-}];
 
 
 export const faqs: FaqItem[] = [

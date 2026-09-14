@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Container } from '../components/ui/Container';
@@ -39,15 +39,13 @@ export function TopEntrySeriesDetail() {
   const seriesSliderMap: Record<string, string[]> = {
     'vtx-g-series': ['/assets/VTX G SERIES.png', '/assets/VTX G SERIES - 1.png'],
     'vtx-a-series': ['/assets/VTX A SERIES.png', '/assets/VTX A SERIES -1.png'],
-    'vtx-cx-series': ['/assets/VTX CX SERIES.png', '/assets/VTX CX SERIES - 1.png'],
-    'vtx-hs-series': ['/assets/VTX HS series.png', '/assets/VTX HS SERIES -1.png'],
     'vtx-jm-series': ['/assets/VTX JM SERIES.png', '/assets/VTX JM SERIES-1.png'],
     'vtx-fb-series': ['/assets/VTX FB SERIES.png', '/assets/VTX FB SERIES-1.png']
   };
 
   const productSliderImages = seriesSliderMap[slug ?? ''] ?? [series.image, series.image];
 
-  const overviewTabs = useMemo(() => ({
+  const overviewTabs = {
     Overview: (
       <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
         <div>
@@ -138,7 +136,7 @@ export function TopEntrySeriesDetail() {
         ))}
       </div>
     )
-  }));
+  };
 
   return (
     <>

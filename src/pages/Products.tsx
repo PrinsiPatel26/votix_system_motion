@@ -15,9 +15,7 @@ import { products } from '../data/products';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { EASE_SMOOTH } from '../utils/motion';
 
-const publicProducts = products.filter(
-  (product) => product.category !== 'high-shear' && product.category !== 'coaxial'
-);
+const publicProducts = products;
 
 export function Products() {
   usePageMeta(

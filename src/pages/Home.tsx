@@ -5,7 +5,6 @@ import { ProductCategories } from '../components/home/ProductCategories';
 import { ImpellerRange } from '../components/home/ImpellerRange';
 import { TechnologySection } from '../components/home/TechnologySection';
 import { WhyVotix } from '../components/home/WhyVotix';
-import { CaseStudiesSection } from '../components/home/CaseStudiesSection';
 import { SupportSection } from '../components/home/SupportSection';
 import { QuoteCTA } from '../components/home/QuoteCTA';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -24,7 +23,6 @@ export function Home() {
       <ImpellerRange />
       <TechnologySection />
       <WhyVotix />
-      <CaseStudiesSection />
       <SupportSection />
       <QuoteCTA />
     </>);

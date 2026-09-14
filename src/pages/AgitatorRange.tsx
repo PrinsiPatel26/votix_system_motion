@@ -167,7 +167,7 @@ export function AgitatorRange() {
                   {activeFilter === 'all' ? 'ALL AGITATORS' : activeFilter === 'vtx-series' ? 'VTX SERIES' : 'Agitator Series'}
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-600">
-                  Browse every available VOTIX series, including specialist high-shear, coaxial and entry-specific configurations. Select a series to view its existing detail page, specifications and compatible mixing elements.
+                  Browse every available VOTIX series and entry-specific configuration. Select a series to view its existing detail page, specifications and compatible mixing elements.
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">

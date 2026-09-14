@@ -15,7 +15,7 @@ export function BottomEntryAgitators() {
 
   usePageMeta(
     'VOTIX Systems | Bottom Entry Agitators',
-    'Browse the full VOTIX Bottom Entry Agitator range: VTX-BE Standard, VTX-BU U-Impeller, VTX-BEH High-Shear, VTX-BH Hygienic and VTX-BM Multi-Agitator.'
+    'Browse the full VOTIX Bottom Entry Agitator range: VTX-BE Standard, VTX-BU U-Impeller, VTX-BEH High-Shear and VTX-BH Hygienic.'
   );
 
   return (

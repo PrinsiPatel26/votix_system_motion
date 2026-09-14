@@ -10,13 +10,11 @@ export function LoadingScreen({ isExiting }: LoadingScreenProps) {
       className={`votix-loading-screen${isExiting ? ' votix-loading-screen--exiting' : ''}`}
       role="status"
       aria-live="polite"
-      aria-label="Loading VOTIX Systems"
+      aria-label="Loading"
     >
       <div className="votix-loading-mark" aria-hidden="true">
-        <span className="votix-loading-ring" />
-        <img src="/votix.download.png" alt="VOTIX Systems" className="votix-loading-logo" />
+        <img src="/votix.download.png" alt="" className="votix-loading-logo" />
       </div>
-      <span className="sr-only">Loading VOTIX Systems</span>
     </div>
   );
 }

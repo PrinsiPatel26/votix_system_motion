@@ -22,7 +22,7 @@ export const applications: Application[] = [
   'Bulk circulation alone cannot reduce droplet size; without a defined shear zone the product separates or shows visible texture variation.',
   technology:
   'A rotor-stator head providing a controlled high shear zone, combined with a bulk impeller that ensures the entire batch passes through it a sufficient number of times.',
-  agitators: ['high-shear-dissolver', 'coaxial-agitator', 'top-entry-agitator'],
+  agitators: ['top-entry-agitator'],
   impellers: ['rotor-stator', 'hydrofoil'],
   industries: ['cosmetics', 'pharmaceutical', 'dairy', 'food-beverage'],
   icon: 'Layers'
@@ -48,7 +48,7 @@ export const applications: Application[] = [
   'Powders float, form lumps or fisheyes and take excessive time to incorporate, leaving unreacted material and inconsistent product properties.',
   technology:
   'A serrated dissolver disc at high tip speed creating a controlled vortex that draws powder into the shear zone and breaks agglomerates apart.',
-  agitators: ['high-shear-dissolver', 'coaxial-agitator'],
+  agitators: ['top-entry-agitator'],
   impellers: ['dissolver-disc', 'rotor-stator'],
   industries: ['chemical', 'cosmetics', 'food-beverage'],
   icon: 'Sparkles'
@@ -61,7 +61,7 @@ export const applications: Application[] = [
   'Insufficient or uneven shear produces coarse droplets that cream or separate during storage, and over-shearing wastes energy and can damage the product.',
   technology:
   'A rotor-stator element sized for the required droplet distribution, generally combined with wall scraping for heat control during the emulsification phase.',
-  agitators: ['coaxial-agitator', 'high-shear-dissolver'],
+  agitators: ['top-entry-agitator'],
   impellers: ['rotor-stator'],
   industries: ['cosmetics', 'pharmaceutical', 'food-beverage'],
   icon: 'Droplets'
@@ -74,7 +74,7 @@ export const applications: Application[] = [
   'Slow dissolution extends batch time and leaves undissolved material at the vessel bottom, especially for fine or hygroscopic powders.',
   technology:
   'Sufficient bulk turnover to keep the concentration gradient at the particle surface high, supported by localised shear where the powder is introduced.',
-  agitators: ['top-entry-agitator', 'bottom-entry-agitator', 'high-shear-dissolver'],
+  agitators: ['top-entry-agitator', 'bottom-entry-agitator'],
   impellers: ['pitched-blade-turbine', 'dissolver-disc'],
   industries: ['pharmaceutical', 'dairy', 'chemical', 'food-beverage'],
   icon: 'FlaskConical'
@@ -87,7 +87,7 @@ export const applications: Application[] = [
   'Product stagnating at the jacket wall forms an insulating boundary layer, slowing heating and cooling and risking local overheating of sensitive products.',
   technology:
   'Flow directed along the vessel wall by an axial impeller in low-viscosity duty or a wall-contact element where the product is viscous.',
-  agitators: ['top-entry-agitator', 'coaxial-agitator', 'side-entry-agitator'],
+  agitators: ['top-entry-agitator', 'side-entry-agitator'],
   impellers: ['hydrofoil'],
   industries: ['dairy', 'cosmetics', 'chemical', 'biotech'],
   icon: 'Thermometer'
@@ -126,7 +126,7 @@ export const applications: Application[] = [
   'In the laminar regime a conventional impeller carves a rotating cavern around itself while the rest of the batch stands still.',
   technology:
   'Large-diameter wall-contact elements that mechanically move the whole batch, often paired with a high-shear element.',
-  agitators: ['coaxial-agitator', 'custom-agitator', 'top-entry-agitator'],
+  agitators: ['custom-agitator', 'top-entry-agitator'],
   impellers: ['dissolver-disc'],
   industries: ['cosmetics', 'food-beverage', 'chemical', 'pharmaceutical'],
   icon: 'Spline'

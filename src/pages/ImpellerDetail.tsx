@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Container } from '../components/ui/Container';
@@ -133,26 +133,6 @@ const impellerTemplates = {
       { label: 'Process focus', value: 'Custom process optimization and unique geometry matching' }
     ]
   },
-  paddle: {
-    summary: 'A wide, slow-moving blade creating broad circulation with low shear, ideal for heat transfer and gentle blending of products that must not be damaged by aggressive turbulence.',
-    overview: 'Paddle impellers deliver gentle, broad circulation with minimal shear stress. Ideal for low-shear blending, heat-transfer applications, and delicate products requiring careful handling.',
-    flowType: 'Gentle / broad circulation',
-    typicalDuties: ['Low-shear mixing', 'Gentle blending', 'Heat-transfer applications'],
-    benefits: ['Very low shear', 'Broad circulation', 'Excellent heat transfer', 'Product-sensitive operation'],
-    applications: ['Gentle blending', 'Heat transfer', 'Shear-sensitive batches', 'Batch circulation'],
-    design: [
-      'Wide blade geometry for large surface movement',
-      'Low shear action for delicate or temperature-sensitive products',
-      'Effective pacing of heat exchange around vessel walls',
-      'Reliable operation in moderate to viscous duty'
-    ],
-    technical: [
-      { label: 'Flow pattern', value: 'Gentle / broad circulation' },
-      { label: 'Typical duty', value: 'Low-shear mixing; blending; heat-transfer applications' },
-      { label: 'Best suited to', value: 'Low to medium viscosity products' },
-      { label: 'Process focus', value: 'Heat transfer and gentle mixing' }
-    ]
-  },
   'rushton-turbine': {
     summary: 'A disc turbine with six vertical blades that breaks incoming gas into fine bubbles and creates strong radial discharge — the reference impeller for aeration and fermentation.',
     overview: 'Rushton / turbine impellers produce strong radial flow with higher shear, making them the reference choice for gas dispersion, aeration, and fermentation. The radial discharge pattern creates intense local turbulence.',
@@ -194,23 +174,23 @@ const impellerTemplates = {
     ]
   },
   'high-speed-impeller': {
-    summary: 'Engineered high-speed element designed for the inner shaft of a coaxial / dual-shaft agitator. Provides localized shear and fast mixing while the outer shaft handles bulk circulation and heat transfer.',
-    overview: 'High-Speed Impeller elements are engineered as the inner shaft component in a coaxial / dual-shaft agitator system. Working in tandem with an outer slow-speed wall-contact element, the high-speed impeller provides localized shear, dispersion, and fast mixing within the controlled bulk circulation environment. This dual-action approach is ideal for complex formulations requiring independent control of circulation and shear.',
-    flowType: 'High-speed inner shaft mixing (coaxial systems)',
-    typicalDuties: ['Inner shaft high-speed mixing', 'Localized dispersion', 'Complex formulation processing'],
-    benefits: ['Engineered for dual-shaft systems', 'Independent shear control', 'Localized mixing intensity', 'Formulation flexibility'],
+    summary: 'Engineered high-speed element for localized shear, dispersion and fast mixing in demanding process duties.',
+    overview: 'High-Speed Impeller elements provide localized shear and rapid dispersion while supporting controlled mixing intensity. The geometry is selected according to the product, vessel and required process duty.',
+    flowType: 'High-speed localized mixing',
+    typicalDuties: ['High-speed mixing', 'Localized dispersion', 'Complex formulation processing'],
+    benefits: ['High-speed operation', 'Controlled shear intensity', 'Localized mixing action', 'Formulation flexibility'],
     applications: ['Complex formulations', 'Emulsions', 'Creams', 'Lotions', 'Ointments', 'Specialty high-viscosity mixing'],
     design: [
-      'Engineered high-speed element for coaxial inner shaft',
-      'Designed to work with an outer slow-speed wall-contact element',
-      'Provides localized shear without disrupting bulk circulation',
+      'Engineered high-speed element for localized process shear',
+      'Designed to provide rapid dispersion and particle size reduction',
+      'Provides localized shear for demanding process duties',
       'Geometry engineered according to process requirements'
     ],
     technical: [
-      { label: 'System type', value: 'Coaxial / dual-shaft agitator' },
-      { label: 'Shaft position', value: 'Inner fast-speed shaft' },
+      { label: 'System type', value: 'High-speed mixing element' },
+      { label: 'Operating mode', value: 'Localized high-speed mixing' },
       { label: 'Typical duty', value: 'Complex formulations; emulsions; creams; controlled shear applications' },
-      { label: 'Typical outer element', value: 'Slow-speed wall-contact element' }
+      { label: 'Selection basis', value: 'Product, vessel and process duty' }
     ]
   }
 } as const;
@@ -243,7 +223,7 @@ export function ImpellerDetail() {
     ]
   };
 
-  const tabs = useMemo(() => ({
+  const tabs = {
     Overview: (
       <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr]">
         <div>
@@ -356,7 +336,7 @@ export function ImpellerDetail() {
         ))}
       </div>
     )
-  }));
+  };
 
   return (
     <>

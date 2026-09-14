@@ -55,7 +55,7 @@ export const products: Product[] = [
   { label: 'Impellers', value: 'Hydrofoil, pitched blade, Rushton, anchor and combinations' },
   { label: 'Surface finish', value: 'Industrial, ground or polished as specified' }],
 
-  related: ['bottom-entry-agitator', 'coaxial-agitator', 'high-shear-dissolver'],
+  related: ['bottom-entry-agitator', 'custom-agitator'],
   featured: true
 },
 {
@@ -149,100 +149,7 @@ export const products: Product[] = [
   { label: 'Speed control', value: 'VFD controlled' },
   { label: 'Surface finish', value: 'Polished, Ra on request' }],
 
-  related: ['top-entry-agitator', 'high-shear-dissolver', 'coaxial-agitator'],
-  featured: true
-},
-{
-  id: 'p-04',
-  slug: 'high-shear-dissolver',
-  name: 'High Shear Mixer / Dissolver',
-  shortName: 'High Shear',
-  category: 'high-shear',
-  categoryLabel: 'High Shear / Dissolver',
-  tagline: 'Intense shear for emulsions and dispersions',
-  description:
-  'High tip speed rotor-stator heads and dissolver discs for emulsification, powder wetting and particle size reduction.',
-  overview: [
-  'The high shear range covers both serrated dissolver discs for wetting and dispersing powders, and rotor-stator heads where product is forced through a narrow gap at high tip speed to create fine, stable emulsions.',
-  'High shear units are frequently combined with a slow wall-scraping element in a coaxial arrangement so that bulk turnover and localised shear can be controlled independently.'],
-
-  industries: ['cosmetics', 'pharmaceutical', 'chemical', 'food-beverage'],
-  applications: ['emulsification', 'dispersion', 'homogenization', 'dissolution'],
-  features: [
-  'Interchangeable rotor-stator heads and dissolver discs',
-  'High speed drive with VFD control',
-  'Configurable tip speed for shear-sensitive products',
-  'Available as standalone or as part of a coaxial system'],
-
-  advantages: [
-  'Fine, repeatable droplet and particle size distribution',
-  'Rapid wetting of powders with fewer agglomerates',
-  'Shorter dispersion cycle times',
-  'Shear intensity controllable through speed and head design'],
-
-  technicalHighlights: [
-  'Rotor-stator gap selectable to the target duty',
-  'Balanced high speed shaft assemblies',
-  'Mechanical seal arrangements for vacuum operation',
-  'Head geometry supporting cleaning and inspection'],
-
-  image: images.products.highShear,
-  gallery: [images.products.highShear, images.impellers.rotorStator, images.impellers.dissolverDisc],
-  specifications: [
-  { label: 'Mounting', value: 'Top entry, vertical' },
-  { label: 'Mixing heads', value: 'Rotor-stator, dissolver disc' },
-  { label: 'Wetted materials', value: 'SS 316 / SS 316L' },
-  { label: 'Drive', value: 'High speed direct drive, VFD controlled' },
-  { label: 'Sealing', value: 'Single or double mechanical seal, vacuum rated on request' }],
-
-  related: ['coaxial-agitator', 'top-entry-agitator', 'custom-agitator'],
-  featured: true
-},
-{
-  id: 'p-05',
-  slug: 'coaxial-agitator',
-  name: 'Coaxial Agitator',
-  shortName: 'Coaxial',
-  category: 'coaxial',
-  categoryLabel: 'Coaxial',
-  tagline: 'Two independent mixing systems in one vessel',
-  description:
-  'A slow wall-scraping frame combined with an independently driven high shear element for viscous, multi-phase products.',
-  overview: [
-  'Coaxial systems run two shafts on the same axis: an outer anchor or spiral frame at low speed maintaining bulk movement and wall heat transfer, and an inner high shear or dissolver element at high speed handling dispersion.',
-  'Each drive is controlled independently, so shear history and bulk turnover can be tuned separately at every stage of the batch — essential for creams, gels and emulsified products.'],
-
-  industries: ['cosmetics', 'pharmaceutical', 'food-beverage', 'chemical'],
-  applications: ['emulsification', 'viscous-mixing', 'homogenization', 'heat-transfer'],
-  features: [
-  'Independent slow-speed and high-speed drives',
-  'Anchor or spiral outer frame with optional scrapers',
-  'Rotor-stator or dissolver inner element',
-  'Vacuum-capable configurations available'],
-
-  advantages: [
-  'Handles wide viscosity swings within one batch',
-  'Excellent wall heat transfer during heating and cooling',
-  'Independent control of bulk flow and shear',
-  'Consistent texture with minimal air entrainment'],
-
-  technicalHighlights: [
-  'Concentric shaft arrangement with dedicated bearing systems',
-  'Double mechanical seals for vacuum duty',
-  'PTFE scraper blades matched to vessel contour',
-  'Combined drive frame engineered for the vessel head plate'],
-
-  image: images.products.coaxial,
-  gallery: [images.products.coaxial, images.impellers.anchor, images.impellers.rotorStator],
-  specifications: [
-  { label: 'Mounting', value: 'Top entry, vertical, combined drive frame' },
-  { label: 'Outer element', value: 'Anchor / spiral anchor, optional PTFE scrapers' },
-  { label: 'Inner element', value: 'Rotor-stator or dissolver disc' },
-  { label: 'Wetted materials', value: 'SS 316 / SS 316L' },
-  { label: 'Sealing', value: 'Double mechanical seal, vacuum rated on request' },
-  { label: 'Control', value: 'Independent VFD per drive' }],
-
-  related: ['high-shear-dissolver', 'top-entry-agitator', 'custom-agitator'],
+  related: ['top-entry-agitator', 'custom-agitator', 'bottom-entry-agitator'],
   featured: true
 },
 {
@@ -288,7 +195,7 @@ export const products: Product[] = [
   { label: 'Engineering', value: 'Impeller selection, shaft sizing, optional CFD' },
   { label: 'Delivery', value: 'Manufacture, testing, installation and commissioning support' }],
 
-  related: ['top-entry-agitator', 'side-entry-agitator', 'coaxial-agitator']
+  related: ['top-entry-agitator', 'side-entry-agitator', 'bottom-entry-agitator']
 }];
 
 

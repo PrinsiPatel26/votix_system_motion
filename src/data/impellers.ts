@@ -50,19 +50,6 @@ export const impellers: Impeller[] = [
     image: images.impellers.pitchedBlade
   },
   {
-    id: 'imp-04',
-    slug: 'paddle',
-    name: 'Paddle',
-    family: 'viscous',
-    familyLabel: 'Viscous / Wall Contact',
-    purpose: 'Gentle, broad circulation for low-shear mixing',
-    description:
-      'A wide, slow-moving blade creating broad circulation with low shear, ideal for heat transfer and gentle blending of products that must not be damaged by aggressive turbulence.',
-    suitableFor: ['Gentle blending', 'Heat transfer', 'Low-shear mixing'],
-    viscosity: 'Low to medium',
-    image: images.impellers.anchor
-  },
-  {
     id: 'imp-05',
     slug: 'rushton-turbine',
     name: 'Rushton Turbine',

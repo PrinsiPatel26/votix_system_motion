@@ -39,7 +39,7 @@ export const industries: Industry[] = [
   'Reliable suspension of sugars, starches and particulates',
   'Food-contact compliant materials and surface finishes'],
 
-  agitators: ['top-entry-agitator', 'high-shear-dissolver', 'coaxial-agitator'],
+  agitators: ['top-entry-agitator'],
   applications: ['blending', 'suspension', 'dissolution', 'emulsification'],
   benefits: [
   'Faster batch turnaround with shorter blend times',
@@ -62,7 +62,7 @@ export const industries: Industry[] = [
   'Repeatable, low-variation mixing conditions',
   'Compatibility with clean-in-place and steam cleaning'],
 
-  agitators: ['top-entry-agitator', 'bottom-entry-agitator', 'high-shear-dissolver'],
+  agitators: ['top-entry-agitator', 'bottom-entry-agitator'],
   applications: ['dissolution', 'suspension', 'homogenization', 'emulsification'],
   benefits: [
   'Reproducible batch results supporting quality control',
@@ -108,7 +108,7 @@ export const industries: Industry[] = [
   'Air-free mixing to preserve product appearance',
   'Handling of viscosity changes through the batch cycle'],
 
-  agitators: ['coaxial-agitator', 'high-shear-dissolver', 'top-entry-agitator'],
+  agitators: ['top-entry-agitator'],
   applications: ['emulsification', 'homogenization', 'viscous-mixing', 'dispersion'],
   benefits: [
   'Fine, stable emulsions with consistent droplet size',

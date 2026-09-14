@@ -12,8 +12,6 @@ export const images = {
     topEntry: "/assets/VTX%20G%20SERIES.png",
     topEntrySeries: "/assets/VTX%20G%20SERIES%20-%201.png",
     topEntryAnchorSeries: "/assets/VTX%20A%20SERIES%20-1.png",
-    topEntryCoaxialSeries: "/assets/VTX%20CX%20SERIES%20-%201.png",
-    topEntryHighShearSeries: "/assets/VTX%20HS%20SERIES%20-1.png",
     topEntryJetMixerSeries: "/assets/VTX%20JM%20SERIES-1.png",
     topEntryFermenterSeries: "/assets/VTX%20FB%20SERIES-1.png",
 
@@ -30,10 +28,6 @@ export const images = {
     bottomEntryHighShear: "/assets/beh_1.png",
     bottomEntryHighShearSecondary: "/assets/beh_2.png",
     bottomEntryHygienic: "/assets/VTX%20BH%20SERIES%20-%201.png",
-
-    highShear: "/ba914533-7dfb-40aa-8eea-88c97c8b8d11.jpg",
-
-    coaxial: "/73c391cb-9292-47d0-b9ee-3e9e0fa6c0bc.jpg",
 
     custom: "/assets/custom1_new.png",
     customSecondary: "/assets/custom2_new.png"
@@ -52,7 +46,7 @@ export const images = {
 
     rushton: "/assets/Rushton%20Turbine%20Impeller.png",
 
-    rotorStator: "/23d391c7-e833-4681-ad3d-4adddb595874.jpg",
+    rotorStator: "/assets/high%20shaer+new_1.png",
 
     dissolverDisc: "/assets/Dissolver%20disc.png",
 
@@ -98,8 +92,6 @@ export const images = {
     caseDairy: "/0016f6b9-b1bb-4048-bde1-9c41167a3701.jpg",
 
     caseChemical: "/48c8a8c2-bedd-4ee7-860c-1e16c68dd279.jpg",
-
-    caseCosmetics: "/c4cdf25f-90e3-419a-bea0-d9afa2ec4e2c.jpg"
 
   }
 } as const;

@@ -199,53 +199,6 @@ export const bottomEntrySeries: BottomEntrySeries[] = [
       { slug: 'custom', name: 'Process-Specific Hygienic Impeller Selection', description: 'Impeller selected to fit the hygienic process duty and vessel geometry.', image: images.impellers.hydrofoil }
     ]
   },
-  {
-    slug: 'vtx-bm-multi-agitator',
-    name: 'VTX-BM MULTI-AGITATOR',
-    series: 'Multi-Agitator Bottom Entry',
-    tagline: 'MULTIPLE MIXING ACTIONS FOR COMPLEX PROCESS DUTIES.',
-    description:
-      'VTX-BM is a multiple bottom-driven mixing arrangement intended for complex process duties and large vessel applications where several mixing zones or stages are required.',
-    applications: ['Complex Mixing', 'Large Vessels', 'Multi-Stage Processes'],
-    industries: ['Complex mixing', 'Large vessels', 'Multi-stage processes'],
-    image: images.products.bottomEntry,
-    gallery: [images.products.bottomEntry, images.impellers.hydrofoil, images.impellers.propeller, images.engineering.processOptimization],
-    benefits: ['Multi-zone mixing', 'Large vessel suitability', 'Process-specific engineering', 'Flexible configuration'],
-    overview: [
-      'VTX-BM is engineered for multiple mixing actions in complex process duties and large vessel applications.',
-      'The arrangement provides multiple bottom-mounted mixing zones in a single vessel, helping achieve broader circulation and more controlled process performance where one impeller arrangement would be insufficient.',
-      'The precise impeller combination, shaft arrangement and spacing are set by process duty and vessel geometry rather than a fixed standard design.',
-      'This configuration is intended for complex or multi-stage mixing operations requiring a tailored engineering solution.'
-    ],
-    features: [
-      'Multiple bottom-driven mixing zones',
-      'Suitable for large vessel applications',
-      'Process-specific arrangement engineering',
-      'Multi-stage mixing capability',
-      'Flexible impeller combinations',
-      'Adaptable to complex duties'
-    ],
-    technical: [
-      { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Vessel Volume', value: 'Engineered to requirement' },
-      { label: 'Typical Impeller', value: 'Multiple impeller combinations engineered for the process' },
-      { label: 'Typical Duties', value: 'Complex mixing; large vessels; multi-stage processes' },
-      { label: 'Key Character', value: 'Multiple mixing actions for complex, multi-zone bottom-entry service' }
-    ],
-    specificationTable: [
-      { label: 'Motor Power', value: 'Available on request' },
-      { label: 'Vessel Volume', value: 'Engineered to requirement' },
-      { label: 'Typical Impeller', value: 'Multiple impeller combinations engineered for the process' },
-      { label: 'Typical Duties', value: 'Complex mixing; large vessels; multi-stage processes' },
-      { label: 'Key Character', value: 'Multiple mixing actions for complex, multi-zone bottom-entry service' }
-    ],
-    compatibleImpellers: [
-      { slug: 'hydrofoil', name: 'Hydrofoil', description: 'Bulk circulation and broad tank turnover in staged bottom-entry arrangements.', image: images.impellers.hydrofoil },
-      { slug: 'propeller', name: 'Propeller', description: 'High circulation element for large vessel flow management.', image: images.impellers.propeller },
-      { slug: 'pitched-blade-turbine', name: 'Pitched-Blade Turbine', description: 'Balanced mixed-flow element for multi-stage or complex duties.', image: images.impellers.pitchedBlade },
-      { slug: 'custom', name: 'Custom Impeller Combination', description: 'Engineered process-specific arrangement for multi-stage bottom-entry mixing.', image: images.impellers.hydrofoil }
-    ]
-  }
 ];
 
 export const getBottomEntrySeries = (slug: string) =>

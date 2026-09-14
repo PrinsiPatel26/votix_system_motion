@@ -2,8 +2,6 @@ export type ProductCategory =
 'top-entry' |
 'side-entry' |
 'bottom-entry' |
-'high-shear' |
-'coaxial' |
 'custom';
 
 export interface SpecRow {
@@ -84,18 +82,6 @@ export interface Resource {
   keywords: string[];
   content?: string[];
   featured?: boolean;
-}
-
-export interface CaseStudy {
-  id: string;
-  slug: string;
-  title: string;
-  industry: string;
-  application: string;
-  solution: string;
-  result: string;
-  image: string;
-  placeholder: boolean;
 }
 
 export interface FaqItem {

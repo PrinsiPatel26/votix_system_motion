@@ -19,8 +19,6 @@ const footerProductLinks = [
   { label: 'Top Entry', href: '/products/top-entry-agitator' },
   { label: 'Side Entry', href: '/products/side-entry-agitator' },
   { label: 'Bottom Entry', href: '/products/bottom-entry-agitator' },
-  { label: 'High Shear', href: '/products/high-shear-dissolver' },
-  { label: 'Coaxial', href: '/products/coaxial-agitator' },
   { label: 'Custom Engineered', href: '/products/custom-agitator' },
   { label: 'Custom Impellers', href: '/products/impellers' },
   { label: 'All Impeller Range', href: '/products/impellers' },

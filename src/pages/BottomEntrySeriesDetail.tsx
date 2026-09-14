@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Container } from '../components/ui/Container';
@@ -42,12 +42,11 @@ export function BottomEntrySeriesDetail() {
     'vtx-bu-u-impeller': ['/assets/VTX BU SERIES.png', '/assets/VTX BU SERIES-1.png'],
     'vtx-beh-high-shear': [images.products.bottomEntryHighShear, images.products.bottomEntryHighShearSecondary],
     'vtx-bh-hygienic': ['/assets/VTX BH SERIES (1).png', '/assets/VTX BH SERIES - 1.png'],
-    'vtx-bm-multi-agitator': ['/assets/VTX BH SERIES (1).png', '/assets/VTX BH SERIES - 1.png']
   };
 
   const productSliderImages = seriesSliderMap[slug ?? ''] ?? [series.image, series.image];
 
-  const overviewTabs = useMemo(() => ({
+  const overviewTabs = {
     Overview: (
       <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
         <div>
@@ -138,7 +137,7 @@ export function BottomEntrySeriesDetail() {
         ))}
       </div>
     )
-  }));
+  };
 
   return (
     <>
