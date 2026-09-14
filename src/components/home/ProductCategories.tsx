@@ -48,7 +48,7 @@ export function ProductCategories() {
           className="group flex h-full flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-card transition-[border-color,box-shadow,transform] duration-200 ease-smooth hover:-translate-y-1 hover:border-accent/60 hover:shadow-lift">
           <div className="relative overflow-hidden bg-mist">
             <SmartImage
-              src={product.slug === 'bottom-entry-agitator' ? '/assets/vtx_be_2.png' : product.image}
+              src={product.image}
               alt={`${product.name} — cutaway view`}
               ratio={featured ? 'aspect-[5/4]' : 'aspect-[4/3]'}
               objectFit="contain"
