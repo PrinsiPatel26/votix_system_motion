@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { PageHero } from '../components/layout/PageHero';
-import { ProductCard } from '../components/products/ProductCard';
 import { SmartImage } from '../components/ui/SmartImage';
 import { Badge } from '../components/ui/Badge';
 import {
@@ -13,7 +12,6 @@ import {
   type ProductFilterState } from
 '../components/products/ProductFilters';
 import { QuoteCTA } from '../components/home/QuoteCTA';
-import { products } from '../data/products';
 import { topEntrySeries } from '../data/topEntrySeries';
 import { sideEntrySeries } from '../data/sideEntrySeries';
 import { bottomEntrySeries } from '../data/bottomEntrySeries';
@@ -22,7 +20,6 @@ import { usePageMeta } from '../hooks/usePageMeta';
 import { EASE_SMOOTH } from '../utils/motion';
 
 type CatalogueItem = {
-  kind: 'product' | 'series';
   slug: string;
   name: string;
   category: 'top-entry' | 'side-entry' | 'bottom-entry' | 'custom';
@@ -37,22 +34,7 @@ type CatalogueItem = {
 };
 
 const catalogueItems: CatalogueItem[] = [
-  ...products.map((product) => ({
-    kind: 'product' as const,
-    slug: product.slug,
-    name: product.name,
-    category: product.category,
-    categoryLabel: product.categoryLabel,
-    description: product.description,
-    tagline: product.tagline,
-    image: product.image,
-    applications: product.applications,
-    industries: product.industries,
-    features: product.features,
-    href: `/products/${product.slug}`
-  })),
   ...topEntrySeries.map((series) => ({
-    kind: 'series' as const,
     slug: series.slug,
     name: series.name,
     category: 'top-entry' as const,
@@ -66,7 +48,6 @@ const catalogueItems: CatalogueItem[] = [
     href: `/products/top-entry-agitators/${series.slug}`
   })),
   ...sideEntrySeries.map((series) => ({
-    kind: 'series' as const,
     slug: series.slug,
     name: series.name,
     category: 'side-entry' as const,
@@ -80,7 +61,6 @@ const catalogueItems: CatalogueItem[] = [
     href: `/products/side-entry-agitators/${series.slug}`
   })),
   ...bottomEntrySeries.map((series) => ({
-    kind: 'series' as const,
     slug: series.slug,
     name: series.name,
     category: 'bottom-entry' as const,
@@ -94,8 +74,6 @@ const catalogueItems: CatalogueItem[] = [
     href: `/products/bottom-entry-agitators/${series.slug}`
   }))
 ];
-
-const productBySlug = new Map(products.map((product) => [product.slug, product]));
 
 const normaliseFilterText = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
@@ -154,15 +132,6 @@ function CatalogueSeriesCard({ item }: { item: CatalogueItem }) {
       </div>
     </article>
   );
-}
-
-function CatalogueItemCard({ item }: { item: CatalogueItem }) {
-  if (item.kind === 'product') {
-    const product = productBySlug.get(item.slug);
-    if (product) return <ProductCard product={product} />;
-  }
-
-  return <CatalogueSeriesCard item={item} />;
 }
 
 export function Products() {
@@ -232,14 +201,14 @@ export function Products() {
                 <AnimatePresence mode="popLayout">
                   {results.map((item) =>
                 <motion.li
-                  key={`${item.kind}-${item.slug}`}
+                  key={item.slug}
                   layout
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.24, ease: EASE_SMOOTH }}>
                   
-                      <CatalogueItemCard item={item} />
+                      <CatalogueSeriesCard item={item} />
                     </motion.li>
                 )}
                 </AnimatePresence>
