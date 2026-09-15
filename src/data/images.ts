@@ -22,7 +22,7 @@ export const images = {
     sideEntryBlendingPrimary: "/assets/vtx_sb_new_1.png",
     sideEntryBlendingSecondary: "/assets/vtx_sb_2.png",
 
-    bottomEntry: "/assets/vtx_be_2.png",
+    bottomEntry: "/assets/vtx-be-11.png",
     bottomEntrySecondary: "/assets/vtx_be_2.png",
     bottomEntryUImpeller: "/assets/VTX%20BU%20SERIES-1.png",
     bottomEntryHighShear: "/assets/beh_1.png",
