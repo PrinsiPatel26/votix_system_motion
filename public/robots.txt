@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://votix-system-motion.vercel.app/sitemap.xml
+Sitemap: https://votixsystems.com/sitemap.xml

@@ -11,8 +11,8 @@ import { usePageMeta } from '../hooks/usePageMeta';
 
 export function Home() {
   usePageMeta(
-    'VOTIX Systems | Industrial Agitation & Mixing Solutions',
-    'VOTIX Systems engineers industrial agitators, impellers and mixing systems for dairy, food, pharmaceutical, chemical, cosmetics and biotech processes.'
+    'VOTIX Systems | Industrial Agitators & Mixing Systems',
+    'VOTIX Systems engineers industrial agitators, impellers and custom mixing systems for food, dairy, pharmaceutical, cosmetics and process industries.'
   );
 
   return (
