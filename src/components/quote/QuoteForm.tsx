@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2Icon, PaperclipIcon, SendIcon } from 'lucide-react';
+import { CheckCircle2Icon, SendIcon } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Field, SelectInput, TextArea, TextInput } from '../ui/Field';
 import { industries } from '../../data/industries';
@@ -60,7 +60,6 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
   const [values, setValues] = useState<QuoteFormState>(() => initial(prefill));
   const [errors, setErrors] = useState<Errors<QuoteFormState>>({});
   const [status, setStatus] = useState<SubmitStatus>('idle');
-  const [attachment, setAttachment] = useState<string>('');
 
   const set = (key: keyof QuoteFormState) => (
   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -85,7 +84,7 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
     e.preventDefault();
     if (!validate()) return;
     try {
-      if (openWhatsAppEnquiry({ ...values, attachment }, { type: 'request for a quotation', product: values.product })) {
+      if (openWhatsAppEnquiry(values, { type: 'request for a quotation', product: values.product })) {
         setStatus('success');
       }
     } catch {
@@ -108,7 +107,6 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
             variant="outline"
             onClick={() => {
               setValues(initial(prefill));
-              setAttachment('');
               setStatus('idle');
             }}>
             
@@ -224,25 +222,7 @@ export function QuoteForm({ prefill = {}, onDone, compact = false }: QuoteFormPr
             onChange={set('message')}
             error={errors.message}
             placeholder="Describe the vessel, the mixing task and any constraints." />
-          
         </Field>
-        <div>
-          <span className="mb-1.5 block text-sm font-semibold text-navy-900">Attachment</span>
-          <label
-            htmlFor="q-attachment"
-            className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-md border border-dashed border-steel-300 px-3.5 py-2.5 text-sm text-steel-600 transition-colors duration-150 ease-smooth hover:border-brand hover:text-brand">
-            
-            <PaperclipIcon className="h-4 w-4 shrink-0" aria-hidden />
-            <span className="truncate">{attachment || 'Attach a data sheet or vessel drawing'}</span>
-          </label>
-          <input
-            id="q-attachment"
-            name="attachment"
-            type="file"
-            className="sr-only"
-            onChange={(e) => setAttachment(e.target.files?.[0]?.name ?? '')} />
-          
-        </div>
       </fieldset>
 
       {status === 'error' &&
