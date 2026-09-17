@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { company } from '../data/navigation';
 
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://votixsystems.com').replace(/\/$/, '');
+const siteUrl = 'https://votixsystems.com';
+const siteRootUrl = `${siteUrl}/`;
 
 function upsertMeta(attribute: 'name' | 'property', key: string, content: string) {
   let tag = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
@@ -69,7 +70,7 @@ export function usePageMeta(title: string, description: string) {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'VOTIX Systems',
-      url: siteUrl,
+      url: siteRootUrl,
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/votix.download.png`
@@ -89,7 +90,7 @@ export function usePageMeta(title: string, description: string) {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'VOTIX Systems',
-      url: siteUrl
+      url: siteRootUrl
     });
 
     upsertJsonLd('votix-webpage-schema', {
@@ -101,7 +102,7 @@ export function usePageMeta(title: string, description: string) {
       isPartOf: {
         '@type': 'WebSite',
         name: 'VOTIX Systems',
-        url: siteUrl
+        url: siteRootUrl
       }
     });
 
