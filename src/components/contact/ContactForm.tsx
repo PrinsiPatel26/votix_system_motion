@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { CheckCircle2Icon, Loader2Icon, SendIcon } from 'lucide-react';
+import { CheckCircle2Icon, SendIcon } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Field, SelectInput, TextArea, TextInput } from '../ui/Field';
 import { industries } from '../../data/industries';
 import { products } from '../../data/products';
-import { submitForm, type SubmitStatus } from '../../utils/submitForm';
+import { openWhatsAppEnquiry, type SubmitStatus } from '../../utils/whatsapp';
 import { requireText, validateEmail, validatePhone, type Errors } from '../../utils/validation';
 
 interface ContactValues {
@@ -31,7 +31,6 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactValues>(empty);
   const [errors, setErrors] = useState<Errors<ContactValues>>({});
   const [status, setStatus] = useState<SubmitStatus>('idle');
-  const [reference, setReference] = useState('');
 
   const set = (key: keyof ContactValues) => (
   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -51,11 +50,10 @@ export function ContactForm() {
     setErrors(next);
     if (Object.values(next).some(Boolean)) return;
 
-    setStatus('submitting');
     try {
-      const res = await submitForm('Contact enquiry', values as unknown as Record<string, unknown>);
-      setReference(res.reference);
-      setStatus('success');
+      if (openWhatsAppEnquiry(values as unknown as Record<string, unknown>, { type: 'contact enquiry' })) {
+        setStatus('success');
+      }
     } catch {
       setStatus('error');
     }
@@ -67,14 +65,9 @@ export function ContactForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-50">
           <CheckCircle2Icon className="h-7 w-7 text-accent-700" aria-hidden />
         </div>
-        <h3 className="mt-4 font-display text-xl font-extrabold text-navy">Message sent</h3>
+        <h3 className="mt-4 font-display text-xl font-extrabold text-navy">WhatsApp opened</h3>
         <p className="mx-auto mt-2 max-w-md text-[15px] leading-relaxed text-steel-600">
-          Thanks for getting in touch. Your enquiry reference is{' '}
-          <span className="font-semibold text-navy">{reference}</span> — we typically respond within
-          one working day.
-        </p>
-        <p className="mt-3 text-xs text-steel-500">
-          Demo mode: no backend is connected yet, so nothing has been sent.
+          Your enquiry details are ready in WhatsApp. Please press Send to submit your enquiry.
         </p>
         <Button
           variant="outline"
@@ -152,18 +145,9 @@ export function ContactForm() {
         <p className="text-xs text-steel-500">
           Fields marked <span className="text-accent-700">*</span> are required.
         </p>
-        <Button type="submit" variant="accent" size="lg" disabled={status === 'submitting'}>
-          {status === 'submitting' ?
-          <>
-              <Loader2Icon className="h-4 w-4 animate-spin" aria-hidden />
-              Sending…
-            </> :
-
-          <>
-              Send message
-              <SendIcon className="h-4 w-4" aria-hidden />
-            </>
-          }
+        <Button type="submit" variant="accent" size="lg">
+          Send message
+          <SendIcon className="h-4 w-4" aria-hidden />
         </Button>
       </div>
     </form>);

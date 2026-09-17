@@ -11,8 +11,8 @@ import { usePageMeta } from '../hooks/usePageMeta';
 
 export function Home() {
   usePageMeta(
-    'VOTIX Systems | Industrial Agitators & Mixing Systems',
-    'VOTIX Systems engineers industrial agitators, impellers and custom mixing systems for food, dairy, pharmaceutical, cosmetics and process industries.'
+    'Industrial Agitator Manufacturer in India | VOTIX Systems',
+    'VOTIX Systems designs and supplies industrial agitators, mixing systems, high shear mixers and impellers for food, dairy, pharmaceutical, biotech, cosmetics, chemical and process industries. Based in Vadodara, Gujarat.'
   );
 
   return (

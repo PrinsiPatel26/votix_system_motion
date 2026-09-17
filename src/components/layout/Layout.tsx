@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { ScrollToTop } from './ScrollToTop';
 import { company } from '../../data/navigation';
+import { getWhatsAppNumber } from '../../utils/whatsapp';
 
 export function Layout() {
   return (
@@ -18,7 +19,7 @@ export function Layout() {
 
       <div className="fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-2.5 sm:bottom-6 sm:right-6">
         <a
-          href="https://wa.me/919974995554"
+          href={`https://wa.me/${getWhatsAppNumber()}`}
           target="_blank"
           rel="noreferrer noopener"
           aria-label="WhatsApp Us"

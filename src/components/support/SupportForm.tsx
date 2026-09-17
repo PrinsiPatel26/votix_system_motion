@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { CheckCircle2Icon, Loader2Icon, PaperclipIcon, SendIcon } from 'lucide-react';
+import { CheckCircle2Icon, PaperclipIcon, SendIcon } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Field, SelectInput, TextArea, TextInput } from '../ui/Field';
 import { products } from '../../data/products';
-import { submitForm, type SubmitStatus } from '../../utils/submitForm';
+import { openWhatsAppEnquiry, type SubmitStatus } from '../../utils/whatsapp';
 import { requireText, validateEmail, validatePhone, type Errors } from '../../utils/validation';
 
 interface SupportValues {
@@ -40,7 +40,6 @@ export function SupportForm() {
   const [errors, setErrors] = useState<Errors<SupportValues>>({});
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [attachment, setAttachment] = useState('');
-  const [reference, setReference] = useState('');
 
   const set = (key: keyof SupportValues) => (
   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -62,11 +61,10 @@ export function SupportForm() {
     setErrors(next);
     if (Object.values(next).some(Boolean)) return;
 
-    setStatus('submitting');
     try {
-      const res = await submitForm('Support request', { ...values, attachment });
-      setReference(res.reference);
-      setStatus('success');
+      if (openWhatsAppEnquiry({ ...values, attachment }, { type: 'support request', product: values.product })) {
+        setStatus('success');
+      }
     } catch {
       setStatus('error');
     }
@@ -78,13 +76,9 @@ export function SupportForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-50">
           <CheckCircle2Icon className="h-7 w-7 text-accent-700" aria-hidden />
         </div>
-        <h3 className="mt-4 font-display text-xl font-extrabold text-navy">Support request logged</h3>
+        <h3 className="mt-4 font-display text-xl font-extrabold text-navy">WhatsApp opened</h3>
         <p className="mx-auto mt-2 max-w-md text-[15px] leading-relaxed text-steel-600">
-          Reference <span className="font-semibold text-navy">{reference}</span>. Our service team
-          will contact you to confirm scope and availability.
-        </p>
-        <p className="mt-3 text-xs text-steel-500">
-          Demo mode: no backend is connected yet, so nothing has been sent.
+          Your request details are ready in WhatsApp. Please press Send to submit your request.
         </p>
         <Button
           variant="outline"
@@ -179,18 +173,9 @@ export function SupportForm() {
         <p className="text-xs text-steel-500">
           Fields marked <span className="text-accent-700">*</span> are required.
         </p>
-        <Button type="submit" variant="accent" size="lg" disabled={status === 'submitting'}>
-          {status === 'submitting' ?
-          <>
-              <Loader2Icon className="h-4 w-4 animate-spin" aria-hidden />
-              Submitting…
-            </> :
-
-          <>
-              Submit request
-              <SendIcon className="h-4 w-4" aria-hidden />
-            </>
-          }
+        <Button type="submit" variant="accent" size="lg">
+          Submit request
+          <SendIcon className="h-4 w-4" aria-hidden />
         </Button>
       </div>
     </form>);
