@@ -6,6 +6,8 @@ export const productCategories: {id: ProductCategory | 'all';label: string;short
 { id: 'top-entry', label: 'Top Entry', short: 'Top Entry' },
 { id: 'side-entry', label: 'Side Entry', short: 'Side Entry' },
 { id: 'bottom-entry', label: 'Bottom Entry', short: 'Bottom Entry' },
+{ id: 'high-shear-mixer', label: 'High Shear Mixer', short: 'High Shear' },
+{ id: 'coaxial-mixer', label: 'Coaxial Mixer', short: 'Coaxial' },
 { id: 'custom', label: 'Custom Engineered', short: 'Custom' }];
 
 
@@ -150,6 +152,98 @@ export const products: Product[] = [
   { label: 'Surface finish', value: 'Polished, Ra on request' }],
 
   related: ['top-entry-agitator', 'custom-agitator', 'bottom-entry-agitator'],
+  featured: true
+},
+{
+  id: 'p-04',
+  slug: 'vtx-hs-series',
+  name: 'VTX HS Series',
+  shortName: 'VTX HS',
+  category: 'high-shear-mixer',
+  categoryLabel: 'High Shear Mixer',
+  tagline: 'Intensive dispersion and homogenisation for demanding duties',
+  description:
+  'VTX HS Series is a high-shear mixing solution designed for efficient dispersion, emulsification and intensive mixing applications. The series is suitable for processes requiring high shear and effective material homogenization.',
+  overview: [
+  'VTX HS Series is developed for high-energy mixing duties where the process requires rapid breakdown of agglomerates, fine dispersion and uniform material homogenization.',
+  'The configuration is selected to provide strong local shear while remaining practical for vessel integration, service access and process adaptation.'],
+
+  industries: ['food-beverage', 'pharmaceutical', 'cosmetics', 'chemical', 'biotech'],
+  applications: ['emulsification', 'dispersion', 'homogenization', 'powder-incorporation', 'blending'],
+  features: [
+  'High-shear mixing action for rapid dispersion',
+  'Effective homogenization and emulsification support',
+  'Suitable for demanding process intensification duties',
+  'Configured to suit vessel geometry and process behavior'],
+
+  advantages: [
+  'Creates intense local shear for fine dispersion',
+  'Supports fast processing and uniform material distribution',
+  'Flexible arrangement for varied process requirements',
+  'Designed to integrate into practical vessel layouts'],
+
+  technicalHighlights: [
+  'High-shear zone engineered around the process duty',
+  'Suitable for dispersion, emulsification and homogenization tasks',
+  'Adaptable to different vessel arrangements and media characteristics',
+  'Built to remain practical, serviceable and process-focused'],
+
+  image: images.products.vtxHsPrimary,
+  gallery: [images.products.vtxHsPrimary, images.products.vtxHsSecondary],
+  specifications: [
+  { label: 'Configuration', value: 'High-shear mixer arrangement' },
+  { label: 'Typical duties', value: 'Dispersion, emulsification and homogenization' },
+  { label: 'Installation', value: 'Selected to suit vessel geometry and process data' },
+  { label: 'Design approach', value: 'Application-specific arrangement' },
+  { label: 'Service', value: 'Configured for practical access and maintenance' }],
+
+  related: ['top-entry-agitator', 'custom-agitator'],
+  featured: true
+},
+{
+  id: 'p-05',
+  slug: 'vtx-cx-series',
+  name: 'VTX CX Series',
+  shortName: 'VTX CX',
+  category: 'coaxial-mixer',
+  categoryLabel: 'Coaxial Mixer',
+  tagline: 'Controlled mixing performance in demanding process applications',
+  description:
+  'VTX CX Series is a coaxial mixing solution designed for efficient and controlled mixing in demanding process applications. Its coaxial configuration supports effective mixing across different process conditions.',
+  overview: [
+  'The VTX CX Series uses a coaxial arrangement to combine complementary flow and shear behavior in a single mixing configuration.',
+  'It is suited to duties where controlled bulk movement, process stability and practical installation are all important.'],
+
+  industries: ['chemical', 'food-beverage', 'pharmaceutical', 'biotech', 'dairy'],
+  applications: ['blending', 'dispersion', 'homogenization', 'suspension', 'heat-transfer'],
+  features: [
+  'Coaxial mixing configuration for flexible process performance',
+  'Suitable for demanding process duties',
+  'Designed to support controlled circulation and mixing behavior',
+  'Adapted to vessel and product requirements'],
+
+  advantages: [
+  'Balances circulation and controlled shear in one arrangement',
+  'Suitable for variable process conditions',
+  'Supports controlled process performance',
+  'Designed around practical vessel integration'],
+
+  technicalHighlights: [
+  'Coaxial layout selected for mixed flow requirements',
+  'Suitable for controlled mixing across varying process conditions',
+  'Built around vessel geometry and product behavior',
+  'Focused on practical, process-efficient operation'],
+
+  image: images.products.vtxCxPrimary,
+  gallery: [images.products.vtxCxPrimary, images.products.vtxCxSecondary],
+  specifications: [
+  { label: 'Configuration', value: 'Coaxial mixing arrangement' },
+  { label: 'Typical duties', value: 'Blending, dispersion and controlled process mixing' },
+  { label: 'Installation', value: 'Tuned to vessel geometry and mixing objective' },
+  { label: 'Design approach', value: 'Application-specific coaxial configuration' },
+  { label: 'Service', value: 'Practical operation and maintenance access' }],
+
+  related: ['top-entry-agitator', 'custom-agitator', 'side-entry-agitator'],
   featured: true
 },
 {

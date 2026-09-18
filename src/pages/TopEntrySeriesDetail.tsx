@@ -43,7 +43,7 @@ export function TopEntrySeriesDetail() {
     'vtx-fb-series': ['/assets/VTX FB SERIES.png', '/assets/VTX FB SERIES-1.png']
   };
 
-  const productSliderImages = seriesSliderMap[slug ?? ''] ?? [series.image, series.image];
+  const productSliderImages = seriesSliderMap[slug ?? ''] ?? series.gallery.slice(0, 2);
 
   const overviewTabs = {
     Overview: (

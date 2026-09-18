@@ -15,7 +15,7 @@ export function TopEntryAgitators() {
 
   usePageMeta(
     'VOTIX Systems | Top Entry Agitators',
-    'Browse the full VOTIX Top Entry Agitator series: VTX-G, VTX-A, VTX-CX, VTX-HS, VTX-JM and VTX-FB.'
+    'Browse the full VOTIX Top Entry Agitator series: VTX-G, VTX-A, VTX-JM, VTX-FB, VTX-HS and VTX-CX.'
   );
 
   return (

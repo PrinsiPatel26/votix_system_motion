@@ -22,7 +22,7 @@ import { EASE_SMOOTH } from '../utils/motion';
 type CatalogueItem = {
   slug: string;
   name: string;
-  category: 'top-entry' | 'side-entry' | 'bottom-entry' | 'custom';
+  category: 'top-entry' | 'side-entry' | 'bottom-entry' | 'high-shear-mixer' | 'coaxial-mixer' | 'custom';
   categoryLabel: string;
   description: string;
   tagline: string;
@@ -72,7 +72,24 @@ const catalogueItems: CatalogueItem[] = [
     industries: series.industries,
     features: series.benefits,
     href: `/products/bottom-entry-agitators/${series.slug}`
-  }))
+  })),
+  ...["vtx-hs-series", "vtx-cx-series"].map((slug) => {
+    const product = products.find((entry) => entry.slug === slug);
+    if (!product) return null;
+    return {
+      slug: product.slug,
+      name: product.name,
+      category: product.category,
+      categoryLabel: product.categoryLabel,
+      description: product.description,
+      tagline: product.tagline,
+      image: product.image,
+      applications: product.applications,
+      industries: product.industries,
+      features: product.features,
+      href: `/products/${product.slug}`
+    };
+  }).filter((item): item is NonNullable<typeof item> => item !== null)
 ];
 
 const normaliseFilterText = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '');

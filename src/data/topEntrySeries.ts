@@ -159,6 +159,98 @@ export const topEntrySeries: TopEntrySeries[] = [
     ]
   },
   {
+    slug: 'vtx-hs-series',
+    name: 'VTX-HS SERIES',
+    series: 'High-Performance Top Entry Agitators',
+    tagline: 'HIGH-PERFORMANCE MIXING FOR DEMANDING DUTIES.',
+    description:
+      'High-performance top-entry agitation designed for reliable mixing and efficient process circulation across demanding industrial applications.',
+    applications: ['Blending', 'Suspension', 'Dissolution', 'Homogenization'],
+    industries: ['Chemical / Process', 'Food & Beverage', 'Pharmaceutical', 'Cosmetics', 'Water Treatment'],
+    image: images.products.vtxHsPrimary,
+    gallery: [images.products.vtxHsPrimary, images.products.vtxHsSecondary],
+    benefits: ['High Performance', 'Reliable Circulation', 'Process Flexible', 'Easy Maintenance'],
+    overview: [
+      'VTX-HS Series top-entry agitators are designed for reliable mixing and efficient process circulation across demanding industrial applications.',
+      'The configuration is selected around vessel geometry, product behavior and the required mixing objective.',
+      'Each unit can be adapted with process-specific shaft, seal and impeller arrangements.'
+    ],
+    features: [
+      'Top-entry configuration for practical vessel integration',
+      'Efficient circulation for demanding process duties',
+      'Flexible shaft and impeller selection',
+      'Application-specific drive and seal arrangements',
+      'Suitable for blending, suspension and homogenization',
+      'Engineered for serviceable industrial operation'
+    ],
+    technical: [
+      { label: 'Volume', value: 'Customizable' },
+      { label: 'Motor Power', value: 'Available on request' },
+      { label: 'Impeller Diameter', value: 'Engineered to requirement' },
+      { label: 'Materials', value: 'SS 304 / SS 316 / Custom' },
+      { label: 'Temperature', value: 'Available on request' },
+      { label: 'Pressure', value: 'Available on request' }
+    ],
+    specificationTable: [
+      { label: 'Motor Power', value: 'Available on request' },
+      { label: 'Vessel Volume', value: 'Engineered to requirement' },
+      { label: 'Typical Impellers', value: 'Hydrofoil; Propeller; Pitched-Blade Turbine; application-specific elements' },
+      { label: 'Typical Duties', value: 'Blending; suspension; dissolution; homogenization; process circulation' },
+      { label: 'Configuration', value: 'Top-entry, process-specific arrangement' }
+    ],
+    compatibleImpellers: [
+      { slug: 'hydrofoil', name: 'Hydrofoil', description: 'Efficient axial flow for blending and circulation.', image: images.impellers.hydrofoil },
+      { slug: 'propeller', name: 'Propeller', description: 'High pumping capacity for bulk turnover and suspension.', image: images.impellers.propeller },
+      { slug: 'pitched-blade-turbine', name: 'Pitched-Blade Turbine', description: 'Balanced flow for broad process coverage.', image: images.impellers.pitchedBlade }
+    ]
+  },
+  {
+    slug: 'vtx-cx-series',
+    name: 'VTX-CX SERIES',
+    series: 'Flexible Top Entry Mixing Systems',
+    tagline: 'CONTROLLED MIXING FOR CONSISTENT PROCESS PERFORMANCE.',
+    description:
+      'Flexible top-entry mixing configuration engineered for efficient blending, suspension and process consistency across a wide range of applications.',
+    applications: ['Blending', 'Suspension', 'Homogenization', 'Heat Transfer', 'Process Circulation'],
+    industries: ['Chemical / Process', 'Food & Beverage', 'Dairy', 'Pharmaceutical', 'Biotechnology'],
+    image: images.products.vtxCxPrimary,
+    gallery: [images.products.vtxCxPrimary, images.products.vtxCxSecondary],
+    benefits: ['Flexible Configuration', 'Process Consistency', 'Efficient Mixing', 'Custom Engineered'],
+    overview: [
+      'VTX-CX Series top-entry mixers are configured to support efficient blending, suspension and consistent process performance.',
+      'The mixing arrangement is matched to product behavior, vessel geometry and the required flow pattern.',
+      'Application-specific impeller and drive selection supports a broad range of industrial process duties.'
+    ],
+    features: [
+      'Flexible top-entry mixing configuration',
+      'Efficient bulk movement and process circulation',
+      'Adaptable to varied vessel and product requirements',
+      'Process-specific impeller and shaft arrangements',
+      'Suitable for blending, suspension and homogenization',
+      'Designed for practical service and maintenance access'
+    ],
+    technical: [
+      { label: 'Volume', value: 'Customizable' },
+      { label: 'Motor Power', value: 'Available on request' },
+      { label: 'Impeller Diameter', value: 'Engineered to requirement' },
+      { label: 'Materials', value: 'SS 304 / SS 316 / Custom' },
+      { label: 'Temperature', value: 'Available on request' },
+      { label: 'Pressure', value: 'Available on request' }
+    ],
+    specificationTable: [
+      { label: 'Motor Power', value: 'Available on request' },
+      { label: 'Vessel Volume', value: 'Engineered to requirement' },
+      { label: 'Typical Impellers', value: 'Hydrofoil; Propeller; Pitched-Blade Turbine; application-specific elements' },
+      { label: 'Typical Duties', value: 'Blending; suspension; homogenization; heat-transfer assistance; circulation' },
+      { label: 'Configuration', value: 'Flexible top-entry arrangement' }
+    ],
+    compatibleImpellers: [
+      { slug: 'hydrofoil', name: 'Hydrofoil', description: 'Efficient axial flow for consistent bulk circulation.', image: images.impellers.hydrofoil },
+      { slug: 'propeller', name: 'Propeller', description: 'High pumping capacity for blending and suspension.', image: images.impellers.propeller },
+      { slug: 'pitched-blade-turbine', name: 'Pitched-Blade Turbine', description: 'Balanced flow for flexible process mixing.', image: images.impellers.pitchedBlade }
+    ]
+  },
+  {
     slug: 'vtx-fb-series',
     name: 'VTX-FB SERIES',
     series: 'Fermenter & Bioprocess Agitators',

@@ -2,6 +2,8 @@ export type ProductCategory =
 'top-entry' |
 'side-entry' |
 'bottom-entry' |
+'high-shear-mixer' |
+'coaxial-mixer' |
 'custom';
 
 export interface SpecRow {

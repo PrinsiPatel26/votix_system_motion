@@ -29,6 +29,11 @@ export const images = {
     bottomEntryHighShearSecondary: "/assets/beh_2.png",
     bottomEntryHygienic: "/assets/VTX%20BH%20SERIES%20-%201.png",
 
+    vtxHsPrimary: "/assets/VTX%20HS%20SERIES%20-1.png",
+    vtxHsSecondary: "/assets/VTX%20HS%20series.png",
+    vtxCxPrimary: "/assets/VTX%20CX%20SERIES%20-%201.png",
+    vtxCxSecondary: "/assets/VTX%20CX%20SERIES.png",
+
     custom: "/assets/custom1_new.png",
     customSecondary: "/assets/custom2_new.png"
 
